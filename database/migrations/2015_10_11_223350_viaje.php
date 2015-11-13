@@ -19,7 +19,7 @@ class Viaje extends Migration
             $table->integer('idtikets');
             $table->date('fecha_reserva');
             $table->string('tipo_viaje');
-            
+            $table->timestamps();
         });
     }
 

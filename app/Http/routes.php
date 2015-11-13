@@ -12,4 +12,12 @@
 */
 
 Route::get('/','InicioController@inicio') ;
-Route::get('/usuario','InicioController@GuardarUsuario') ;
+
+Route::get('/naves','InicioController@GuardarUsuario');
+
+Route::get('/destino','InicioController@destinos');
+
+Route::get('/viaje', 'InicioController@crearviaje');
+
+Route::get('/tiket', 'InicioController@crearTikets');
+

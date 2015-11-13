@@ -19,6 +19,7 @@ class Reserva extends Migration
             $table->date('fecha_reserva');
             $table->decimal('costo_total', 5, 2);
             $table->string('estado');
+            $table->timestamps();
 
         });
     }

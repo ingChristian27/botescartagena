@@ -10,9 +10,9 @@ class Nave extends Model {
 
   protected $fillable = [ 'codigo', 'descripcion'];
 
-  public function Cupos()
+  public function Viajes()
   {	
-  	return $this->hasMany(Viaje::class, 'idviaje');
+  	return $this->hasMany(Viaje::class, 'idnave');
 
   }
   

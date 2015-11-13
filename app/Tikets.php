@@ -8,11 +8,11 @@ class Tikets extends Model
 {
     protected $table = 'tikets';
 
-	public function Nave()
-	{	
-	  	return $this->hasOne(Viaje::class, 'idviaje');
+	public function Viaje()
+  	{	
+  		return $this->belongsTo(Viaje::class);
 
-	}
+  	}
 }
 
 

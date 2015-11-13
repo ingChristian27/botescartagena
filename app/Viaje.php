@@ -13,18 +13,21 @@ class Viaje extends Model
 
     public function Nave()
   	{	
-  		return $this->hasMany(Nave::class, 'idnave');
+  		return $this->belongsTo(Nave::class);
 
   	}
   	public function Destino()
   	{	
-  		return $this->hasMany(Destino::class, 'iddestino');
+  		return $this->belongsTo(Destino::class);
 
   	}
-  	public function tikets()
+  	public function Tikets()
   	{	
-  		return $this->hasMany(Tikets::class, 'idtikets');
+  		return $this->hasMany(Tikets::class, 'idviaje');
 
   	}
+
+
+
 
 }
