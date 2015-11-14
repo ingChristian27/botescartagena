@@ -11,14 +11,14 @@ class Viaje extends Model
 
    
 
-    public function Nave()
+    public function nave()
   	{	
-  		return $this->belongsTo(Nave::class);
+  		return $this->belongsTo(Nave::class, 'id');
 
   	}
-  	public function Destino()
+  	public function destino()
   	{	
-  		return $this->belongsTo(Destino::class);
+  		return $this->belongsTo(Destino::class, 'id');
 
   	}
   	public function Tikets()

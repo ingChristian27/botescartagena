@@ -2,12 +2,15 @@
 <html>
 <head>
 	<title>botes cartagena</title>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 	@yield('css')
 </head>
 <body>
-	@yield('content')
+	<div class="container">
+		@yield('content')
 
-	@yield('js')
-
+		@yield('js')
+	</div>
+	
 </body>
 </html>

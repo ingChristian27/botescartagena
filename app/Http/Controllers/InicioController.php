@@ -13,7 +13,11 @@ class InicioController extends Controller
 { 
 	
 	public function inicio(){
-		return view('home');
+		//$viajes = Viaje:: all();
+		$viajes = Viaje::with('nave', 'destino')->get();
+		//dd($naves);
+		//dd($viajes);
+		return view('home', ['viajes'=> $viajes] );
 		
 	}
 	public function GuardarUsuario(){
@@ -35,6 +39,14 @@ class InicioController extends Controller
 
 				return "True Naves";
 	}	
+	public function verNaves(){
+	
+				$naves = Nave::all();
+				return $naves;
+	}
+	public function verViajes(){
+				return  $viajes = Viaje:: all();
+	}
 
 	public function destinos(){
 

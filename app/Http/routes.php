@@ -21,3 +21,7 @@ Route::get('/viaje', 'InicioController@crearviaje');
 
 Route::get('/tiket', 'InicioController@crearTikets');
 
+Route::get('/vernaves', 'InicioController@verNaves');
+
+Route::get('/verviajes', 'InicioController@verViajes');
+
