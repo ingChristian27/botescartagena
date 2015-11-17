@@ -13,29 +13,16 @@ class InicioController extends Controller
 { 
 	
 	public function inicio(){
-		//$viajes = Viaje:: all();
+		$viajes = Viaje:: all();
 		$viajes = Viaje::with('nave', 'destino')->get();
-		//dd($naves);
-		//dd($viajes);
-		return view('home', ['viajes'=> $viajes] );
+		return view('viajes', ['viajes'=> $viajes] );
+
+		
 		
 	}
 	public function GuardarUsuario(){
 	
-				$nave1= new Nave();
-				$nave1->capacidad = 12;
-				$nave1->codigo = "nave1";
-				$nave1->save();
 		
-				$nave2= new Nave();
-				$nave2->capacidad = 10;
-				$nave2->codigo = "nave2";
-				$nave2->save();
-		
-				$nave3= new Nave();
-				$nave3->capacidad = 8;
-				$nave3->codigo = "nave3";
-				$nave3->save();
 
 				return "True Naves";
 	}	
@@ -63,12 +50,14 @@ class InicioController extends Controller
 			
 			$nave    = Nave::find(1);
 			$destino = Destino::find(1);
-			$viaje   = new Viaje;;
-			$v    = Viaje::find(1);
-			$v->fecha_reserva ='2005-06-21';
-			$v->save();
-			//$destino->Viajes()->save($viaje);
-			//$nave->Viajes()->save($viaje);
+			
+			$viaje   = new Viaje;
+			$viaje->fecha_reserva ='2005-06-21';
+			$destino->Viajes()->save($viaje);
+			$nave->Viajes()->save($viaje);
+			echo $viaje->destino;
+			echo $viaje->nave;
+			//return $viaje;
 			
 			return "true";
 	}

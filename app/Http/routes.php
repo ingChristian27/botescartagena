@@ -13,9 +13,10 @@
 
 Route::get('/','InicioController@inicio') ;
 
-Route::get('/naves','InicioController@GuardarUsuario');
+Route::get('/naves2','InicioController@GuardarUsuario');
 
 Route::get('/destino','InicioController@destinos');
+
 
 Route::get('/viaje', 'InicioController@crearviaje');
 
@@ -24,4 +25,16 @@ Route::get('/tiket', 'InicioController@crearTikets');
 Route::get('/vernaves', 'InicioController@verNaves');
 
 Route::get('/verviajes', 'InicioController@verViajes');
+
+Route::get('/naves','navesController@index');
+
+Route::get('/viajes',[
+		'uses' => 'viajesController@index',
+		'as'   => 'up_viajes'
+	]);
+
+Route::post('/naves',[
+		'uses' => 'navesController@store',
+		'as'   => 'update_naves', 
+	]);
 

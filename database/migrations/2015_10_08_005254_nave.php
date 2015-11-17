@@ -14,7 +14,6 @@ class Nave extends Migration
     {
         Schema::create('nave', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('idviaje');
             $table->integer('capacidad');
             $table->string('codigo')->unique();
             $table->string('descripcion', 60);

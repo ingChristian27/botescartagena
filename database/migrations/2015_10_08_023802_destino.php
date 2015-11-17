@@ -14,7 +14,6 @@ class Destino extends Migration
     {
         Schema::create('destino', function (Blueprint $table) {
             $table->increments('id'); 
-            $table->integer('idviaje');
             $table->string('nombre');
             $table->string('distancia');
             $table->text('descripcion');
