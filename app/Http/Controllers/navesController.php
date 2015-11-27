@@ -49,8 +49,7 @@ class navesController extends Controller
         $nave->codigo = $request->get('condigo_nave');
         $nave->descripcion = $request->get('descripcion');
         $nave->save();   
-
-        return redirect('naves')->with('nave_success' => 'Nave creada exitosamente');
+        return redirect('naves')->with(['nave_success' => 'Nave creada exitosamente' ]);
 
       
     }

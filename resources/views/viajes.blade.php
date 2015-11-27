@@ -61,15 +61,12 @@
 				  <td class="success"><strong>Fecha</strong></td>
 				</tr>
 				 	@foreach($viajes as  $viaje) 
-
 						<tr>
 						  <td>{{$viaje->id  }}</td>
 						  <td>{{$viaje->nave->codigo}}</td>
-						  <td>{{$viaje->destino->nombre}}</td>
+						  <td>{{$viaje->destino}}</td>
 						  <td>{{$viaje->fecha_reserva}}</td>
 						</tr>
-					
-
 					@endforeach
 				</table>
 			</div>
