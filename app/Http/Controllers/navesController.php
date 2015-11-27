@@ -18,7 +18,6 @@ class navesController extends Controller
     {
         $naves = Nave:: all();
         return view('naves', ['naves'=> $naves] );
-
     }
 
     /**
@@ -51,7 +50,7 @@ class navesController extends Controller
         $nave->descripcion = $request->get('descripcion');
         $nave->save();   
 
-        return " Se ha insertado la nave";
+        return redirect('naves')->with('nave_success' => 'Nave creada exitosamente');
 
       
     }
