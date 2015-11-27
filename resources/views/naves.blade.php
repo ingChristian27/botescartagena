@@ -20,7 +20,7 @@
 						  <div class="form-group">
 						    <label for="ejemplo_password_1">Capacidad</label>
 						    <input type="text" class="form-control"  name="capacidad"
-						           placeholder="Contraseña">
+						           placeholder="Contraseña" disabled="">
 						  </div>
 					</div>
 					<div class="col-lg-12 col-md-12">

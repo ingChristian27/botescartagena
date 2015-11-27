@@ -20,7 +20,10 @@ class viajesController extends Controller
         $viajes = Viaje:: all();
         $viajes = Viaje::with('nave', 'destino')->get();
 
-        return view('viajes', ['viajes'=> $viajes] );
+        $naves = Nave:: all();
+
+
+        return view('viajes', ['viajes'=> $viajes, 'naves' => $naves] );
     }
 
     /**
@@ -41,7 +44,20 @@ class viajesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        $nave = Nave::where('codigo', '=', $request->get('condigo_nave'))->get();
+        $nave = Destino::find($nave[0]->id);
+        $destino = Destino::find(1);
+     
+        
+        $viaje   = new Viaje;
+        $viaje->fecha_reserva = $request->get('fecha');
+        $destino->Viajes()->save($viaje);
+        $nave->Viajes()->save($viaje);
+
+
+        return " Se ha insertado un destino";
+        
     }
 
     /**

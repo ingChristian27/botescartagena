@@ -17,7 +17,6 @@ Route::get('/naves2','InicioController@GuardarUsuario');
 
 Route::get('/destino','InicioController@destinos');
 
-
 Route::get('/viaje', 'InicioController@crearviaje');
 
 Route::get('/tiket', 'InicioController@crearTikets');
@@ -28,10 +27,13 @@ Route::get('/verviajes', 'InicioController@verViajes');
 
 Route::get('/naves','navesController@index');
 
-Route::get('/viajes',[
-		'uses' => 'viajesController@index',
+Route::get('/viajes', 'viajesController@index');
+
+Route::post('/viajes',[
+		'uses' => 'viajesController@store',
 		'as'   => 'up_viajes'
 	]);
+
 
 Route::post('/naves',[
 		'uses' => 'navesController@store',
