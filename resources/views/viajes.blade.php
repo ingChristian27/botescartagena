@@ -34,7 +34,7 @@
                         <div class="col-lg-6 col-md-6">
                             <div class="form-group">
                                 <label for="ejemplo_password_1">Fecha</label>
-                                <input type="text" class="form-control"  name="fecha"
+                                <input type="date" class="form-control"  name="fecha"
                                        placeholder="Formato 'año-mes-dia'" >
                             </div>
                             <button type="submit" class="btn btn-default"value="enviar">Enviar</button>
