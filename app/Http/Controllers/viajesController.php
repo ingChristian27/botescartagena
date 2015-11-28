@@ -8,32 +8,32 @@ use App\Http\Controllers\Controller;
 use App\Viaje;
 use App\Destino;
 use App\Nave;
-class viajesController extends Controller
-{
+
+class viajesController extends Controller {
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
+    public function index() {
 
         $viajes = Viaje:: all();
         $naves = Nave:: all();
         $viajes = Viaje::with('nave', 'destino')->get();
 
-        
 
-        return view('viajes', ['viajes'=> $viajes, 'naves' => $naves] );
+
+        return view('viajes', ['viajes' => $viajes, 'naves' => $naves]);
         /*
-        $viajes = Viaje:: all();
-        $viajes = Viaje::with('nave', 'destino')->get();
+          $viajes = Viaje:: all();
+          $viajes = Viaje::with('nave', 'destino')->get();
 
-        $naves = Nave:: all();
+          $naves = Nave:: all();
 
 
-        return view('viajes', ['viajes'=> $viajes, 'naves' => $naves] );
-        */
+          return view('viajes', ['viajes'=> $viajes, 'naves' => $naves] );
+         */
     }
 
     /**
@@ -41,8 +41,7 @@ class viajesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
+    public function create() {
         //
     }
 
@@ -52,25 +51,18 @@ class viajesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        
-        $nave = Nave::where('codigo', '=', $request->get('condigo_nave'))->get();
-        //dd($nave[0]->id);
-        //$nave = Nave::find(2);
+    public function store(Request $request) {
 
-        $nave = Nave::find($nave[0]->id);
+        $nave = Nave::where('codigo', '=', $request->get('condigo_nave'))->first();
         $destino = Destino::find(1);
-     
-     
-        $viaje   = new Viaje;
-        $viaje->fecha_reserva = $request->get('fecha');  
-        $destino->Viajes()->save($viaje);
-        $nave->Viajes()->save($viaje);
+        $viaje = new Viaje;
+        $viaje->fecha_reserva = $request->get('fecha');
+        $viaje->destino_id = $destino->id;
+        $viaje->nave_id = $nave->id;
+        $viaje->save();
 
 
-        return redirect('viajes')->with(['viaje_success' => 'Viajes creada exitosamente' ]);
-        
+        return redirect('viajes')->with(['viaje_success' => 'Viajes creada exitosamente']);
     }
 
     /**
@@ -79,8 +71,7 @@ class viajesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
+    public function show($id) {
         //
     }
 
@@ -90,8 +81,7 @@ class viajesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
+    public function edit($id) {
         //
     }
 
@@ -102,8 +92,7 @@ class viajesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
+    public function update(Request $request, $id) {
         //
     }
 
@@ -113,8 +102,8 @@ class viajesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
+    public function destroy($id) {
         //
     }
+
 }

@@ -16,7 +16,8 @@ class Tikets extends Migration
     {
         Schema::create('tikets', function (Blueprint $table) {
             $table->increments('id');  
-            $table->integer('idviaje');
+            $table->integer('viaje_id')->unsigned();
+            $table->foreign('viaje_id')->references('id')->on('viaje');
             $table->integer('idreserva');
             $table->string('codigo')->unique();
             $table->string('tipo_cupo');
