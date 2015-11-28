@@ -18,7 +18,7 @@ class Viaje extends Migration {
             $table->integer('destino_id')->unsigned();
             $table->foreign('destino_id')->references('id')->on('destino');
             $table->date('fecha_reserva');
-            $table->string('tipo_viaje');
+            $table->integer('capacidad')->unsigned();
             $table->timestamps();
         });
     }
