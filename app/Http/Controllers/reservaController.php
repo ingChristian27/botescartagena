@@ -8,15 +8,14 @@ use App\Http\Controllers\Controller;
 use App\Viaje;
 use App\Tikets;
 
-class reservaController extends Controller
-{
+class reservaController extends Controller {
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
+    public function index() {
         return view('reserva');
     }
 
@@ -25,8 +24,7 @@ class reservaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
+    public function create() {
         //
     }
 
@@ -36,21 +34,16 @@ class reservaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+    public function store(Request $request) {
         $cant_tikets = $request->get('cant_adultos') + $request->get('cant_niños');
         $viajes = Viaje::where('fecha_reserva', '=', $request->get('fecha'))->get();
-        if($viajes != null){
+        if ($viajes != null) {
             foreach ($viajes as $viaje) {
-                if($viaje->capacidad >= $cant_tikets )
-                {
-                     
-                     return view('tikets', ['viaje' => $viaje, 'cant_pasajeros' => $cant_tikets]);
-                     ;
+                if ($viaje->capacidad >= $cant_tikets) {
+                    return view('tikets', ['viaje' => $viaje, 'cant_pasajeros' => $cant_tikets]);
                 }
             }
         }
-
         dd($viaje);
         return "hola mundo";
     }
@@ -61,8 +54,7 @@ class reservaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
+    public function show($id) {
         //
     }
 
@@ -72,8 +64,7 @@ class reservaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
+    public function edit($id) {
         //
     }
 
@@ -84,8 +75,7 @@ class reservaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
+    public function update(Request $request, $id) {
         //
     }
 
@@ -95,8 +85,8 @@ class reservaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
+    public function destroy($id) {
         //
     }
+
 }
