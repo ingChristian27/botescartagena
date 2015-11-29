@@ -31,39 +31,43 @@
         </div>
     </div>
 </div>
+
+<form role="form" action="{{ route('detalle_reserva')}}" method="post">
+<input type="number" class="form-control" style="display:none;" name="{{$cant_pasajeros}}">
+<input type="number" class="form-control" style="display:none;" name="{{$viaje->id  }}">
+ {{ csrf_field() }}
 @for ($i = 0; $i < $cant_pasajeros; $i++)
 <div class="row">
     <div class="col-lg-12 col-md-12">
         <div class="card">
             <div style="padding:20px">
                   <div class="row">
-                   <form role="form" action="{{ route('detalle_reserva')}}" method="post">
-                        <div class="col-lg-6">
+                        <div class="col-lg-6">  
                             <div class="form-group">
-                                 <label for="inputPassword">Nombre</label>
-                                 <input type="text" class="form-control" placeholder="Nombres">
+                                 <label for="inputPassword"> nombre  </label>
+                                 <input type="text" class="form-control" placeholder="{{$i}}_Nombres" name="{{$i}}_nombre">
                              </div>
+                        
                            
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group">
                                  <label for="inputPassword">Apellidos</label>
-                                 <input type="text" class="form-control" placeholder="Apellidos">
+                                 <input type="text" class="form-control" placeholder="{{$i}}_Apellidos" name="{{$i}}_apellido">
                              </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group">
                                  <label for="inputPassword">Email</label>
-                                 <input type="mail" class="form-control" placeholder="Email">
+                                 <input type="mail" class="form-control" placeholder="{{$i}}_Email" name="{{$i}}_email">
                              </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group">
                                  <label for="inputPassword">Teléfono</label>
-                                 <input type="mail" class="form-control" placeholder="Teléfono">
+                                 <input type="mail" class="form-control" placeholder="{{$i}}_Teléfono" name="{{$i}}_telefono">
                              </div>
                         </div>
-                    </form>
                 </div>
             </div>
         </div>
@@ -75,10 +79,10 @@
     <div class="col-lg-12 col-md-12">
         <div class="card">
             <div style="padding:20px">
-                <button type="submit" class="btn btn-default"value="enviar">Enviar</button>
+                <button type="submit" class="btn btn-default" value="enviar">Enviar</button>
             </div>
         </div>
     </div>
 </div>
-
+</form>
 @stop()

@@ -36,8 +36,8 @@ class tiketController extends Controller
      */
     public function store(Request $request)
     {
-        return "hola mundo";
-        //dd($request->all())
+        //return "hola mundo";
+        dd($request->all());
     }
 
     /**

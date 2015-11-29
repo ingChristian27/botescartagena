@@ -10,16 +10,17 @@ class Pasajero extends Migration
      *
      * @return void
      */
-     public function up() {
+    public function up()
+    {
         Schema::create('pasajero', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id');  
             $table->string('nombres');
             $table->string('apellidos');
-            $table->string('email');
+            $table->string('identificacion');
             $table->string('telefono');
             $table->date('fecha_nacimiento');
-            $table->integer('cantidad_viajes')->unsigned();
-            $table->timestamps();
+            $table->string('email');
+            $table->timestamps();                   
         });
     }
 
@@ -28,8 +29,8 @@ class Pasajero extends Migration
      *
      * @return void
      */
-    public function down() {
-        Schema::dropIfExists('pasajeros');
+    public function down()
+    {
+        Schema::dropIfExists('pasajero');
     }
-
 }

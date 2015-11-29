@@ -17,7 +17,7 @@ class Viaje extends Model {
         return $this->belongsTo(Destino::class);
     }
 
-//    public function Tikets() {
-//        return $this->hasMany(Tikets::class, 'idviaje');
-//    }
+   public function Tikets() {
+       return $this->hasMany(Tikets::class, 'idviaje');
+   }
 }

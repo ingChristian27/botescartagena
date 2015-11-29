@@ -40,7 +40,7 @@ Route::get('/reserva',[
   'as'  => 'reserva'
 ]);
 
-Route::post('/reserva/detalle', [
+Route::post('/detalles', [
   'uses'=>'tiketController@store',
   'as'=> 'detalle_reserva'
 ]);

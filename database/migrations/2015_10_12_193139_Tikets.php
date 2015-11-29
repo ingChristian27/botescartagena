@@ -18,10 +18,12 @@ class Tikets extends Migration
             $table->increments('id');  
             $table->integer('viaje_id')->unsigned();
             $table->foreign('viaje_id')->references('id')->on('viaje');
-            $table->integer('pasajero_id')->unsigned();
-            $table->foreign('pasajero_id')->references('id')->on('pasajero');
+
             $table->integer('reserva_id')->unsigned();
             $table->foreign('reserva_id')->references('id')->on('reserva');
+
+            //$table->integer('pasajero_id')->unsigned();
+            //$table->foreign('pasajero_id')->references('id')->on('pasajero');
             $table->string('codigo')->unique();
             $table->string('tipo_cupo');
             $table->decimal('precio', 7, 2);
