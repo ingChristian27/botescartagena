@@ -36,8 +36,9 @@ class tiketController extends Controller
      */
     public function store(Request $request)
     {
+        $cant_tikets = $request->get('cant_tikets');
         //return "hola mundo";
-        dd($request->all());
+        dd($cant_tikets);
     }
 
     /**

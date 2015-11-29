@@ -36,12 +36,11 @@ class reservaController extends Controller {
      */
     public function store(Request $request) {
         $cant_tikets = $request->get('cant_adultos') + $request->get('cant_niños');
-        $viajes = Viaje::where('fecha_reserva', '=', $request->get('fecha'))->get();
-        if ($viajes != null) {
-            foreach ($viajes as $viaje) {
-                if ($viaje->capacidad >= $cant_tikets) {
-                    return view('tikets', ['viaje' => $viaje, 'cant_pasajeros' => $cant_tikets]);
-                }
+        $fecha = $request->get('fecha');
+        $viaje = Viaje::where('fecha_reserva', '=', $fecha)->where('capacidad', '>=', $cant_tikets)->first();
+        if ($viaje != null) {
+            if ($viaje->capacidad >= $cant_tikets) {
+                return view('tikets', ['viaje' => $viaje, 'cant_pasajeros' => $cant_tikets]);
             }
         }
         dd($viaje);

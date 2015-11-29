@@ -29,8 +29,8 @@
 </div>
 
 <form role="form" action="{{ route('detalle_reserva')}}" method="post">
-    <input type="number" class="form-control" style="display:none;" name="{{$cant_pasajeros}}">
-    <input type="number" class="form-control" style="display:none;" name="{{$viaje->id  }}">
+    <input type="hidden" class="form-control" name="cant_tikets" value="{{$cant_pasajeros}}">
+    <input type="hidden" class="form-control" name="viaje_id" value="{{$viaje->id}}">
     {{ csrf_field() }}
     @for ($i = 0; $i < $cant_pasajeros; $i++)
     <div class="row">
@@ -58,8 +58,8 @@
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group">
-                                <label for="inputPassword">Teléfono</label>
-                                <input type="mail" class="form-control" placeholder="{{$i}}_Teléfono" name="{{$i}}_telefono">
+                                <label for="inputPassword">Tel�fono</label>
+                                <input type="mail" class="form-control" placeholder="{{$i}}_Tel�fono" name="{{$i}}_telefono">
                             </div>
                         </div>
                     </div>
