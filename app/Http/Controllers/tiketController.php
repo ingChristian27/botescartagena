@@ -5,25 +5,17 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Viaje;
-use App\Destino;
-use App\Nave;
 
-class viajesController extends Controller {
-
+class tiketController extends Controller
+{
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index() {
-
-        $viajes = Viaje:: all();
-        $naves = Nave:: all();
-        $viajes = Viaje::with('nave', 'destino')->get();
-
-        return view('viajes', ['viajes' => $viajes, 'naves' => $naves]);
-
+    public function index()
+    {
+        //
     }
 
     /**
@@ -31,7 +23,8 @@ class viajesController extends Controller {
      *
      * @return \Illuminate\Http\Response
      */
-    public function create() {
+    public function create()
+    {
         //
     }
 
@@ -41,20 +34,10 @@ class viajesController extends Controller {
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request) {
-
-        
-        $nave = Nave::where('codigo', '=', $request->get('condigo_nave'))->first();
-        $destino = Destino::find(1);
-        $viaje = new Viaje;
-        $viaje->fecha_reserva = $request->get('fecha');
-        $viaje->destino_id = $destino->id;
-        $viaje->nave_id = $nave->id;
-        $viaje->capacidad = $request->get('capacidad');
-        $viaje->save();
-
-
-        return redirect('viajes')->with(['viaje_success' => 'Viajes creada exitosamente']);
+    public function store(Request $request)
+    {
+        return "hola mundo";
+        //dd($request->all())
     }
 
     /**
@@ -63,7 +46,8 @@ class viajesController extends Controller {
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id) {
+    public function show($id)
+    {
         //
     }
 
@@ -73,7 +57,8 @@ class viajesController extends Controller {
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id) {
+    public function edit($id)
+    {
         //
     }
 
@@ -84,7 +69,8 @@ class viajesController extends Controller {
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id) {
+    public function update(Request $request, $id)
+    {
         //
     }
 
@@ -94,8 +80,8 @@ class viajesController extends Controller {
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id) {
+    public function destroy($id)
+    {
         //
     }
-
 }

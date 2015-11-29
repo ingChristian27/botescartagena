@@ -14,7 +14,6 @@ class Reserva extends Migration
     {
         Schema::create('reserva', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('idtikets');
             $table->string('tipo_reserva');
             $table->date('fecha_reserva');
             $table->decimal('costo_total', 5, 2);

@@ -2,7 +2,30 @@
 
 @section('content')
 <div class="row">
-<div class="col-lg-12 col-md-12">
+<div class="col-lg-8 col-md-8">
+	<div class="card">
+		<div style="padding:20px;">
+		<h2> Naves </h2>
+			<table class="table table-hover">
+				<tr>
+					  <td class="info"><strong>Codigo</strong></td>
+					  <td class="info"><strong>Capacidad </strong></td>
+					  <td class="info"><strong>Descripción</strong></td>
+					
+				</tr>
+			 	@foreach($naves as  $nave) 
+				<tr>
+					  <td>{{ $nave->codigo  }}</td>
+					  <td>{{ $nave->capacidad}}</td>
+					  <td>{{ $nave->descripcion}}</td>
+				</tr>
+				@endforeach
+
+			</table>
+		</div>
+	</div>
+</div>
+<div class="col-lg-4 col-md-4">
 	<div class="card">
 		<div style="padding:20px; ">
 				<h2> Agregar Nave </h2>
@@ -43,29 +66,6 @@
 			</div> 
 		</div>
 	
-</div>
-<div class="col-lg-12 col-md-12">
-	<div class="card">
-		<div style="padding:20px;">
-		<h2> Naves </h2>
-			<table class="table table-hover">
-				<tr>
-					  <td class="info"><strong>Codigo</strong></td>
-					  <td class="info"><strong>Capacidad </strong></td>
-					  <td class="info"><strong>Descripción</strong></td>
-					
-				</tr>
-			 	@foreach($naves as  $nave) 
-				<tr>
-					  <td>{{ $nave->codigo  }}</td>
-					  <td>{{ $nave->capacidad}}</td>
-					  <td>{{ $nave->descripcion}}</td>
-				</tr>
-				@endforeach
-
-			</table>
-		</div>
-	</div>
 </div>
 
 

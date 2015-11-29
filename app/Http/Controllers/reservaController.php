@@ -6,24 +6,18 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Viaje;
-use App\Destino;
-use App\Nave;
+use App\Tikets;
 
-class viajesController extends Controller {
-
+class reservaController extends Controller
+{
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index() {
-
-        $viajes = Viaje:: all();
-        $naves = Nave:: all();
-        $viajes = Viaje::with('nave', 'destino')->get();
-
-        return view('viajes', ['viajes' => $viajes, 'naves' => $naves]);
-
+    public function index()
+    {
+        return view('reserva');
     }
 
     /**
@@ -31,7 +25,8 @@ class viajesController extends Controller {
      *
      * @return \Illuminate\Http\Response
      */
-    public function create() {
+    public function create()
+    {
         //
     }
 
@@ -41,20 +36,23 @@ class viajesController extends Controller {
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request) {
+    public function store(Request $request)
+    {
+        $cant_tikets = $request->get('cant_adultos') + $request->get('cant_niños');
+        $viajes = Viaje::where('fecha_reserva', '=', $request->get('fecha'))->get();
+        if($viajes != null){
+            foreach ($viajes as $viaje) {
+                if($viaje->capacidad >= $cant_tikets )
+                {
+                     
+                     return view('tikets', ['viaje' => $viaje, 'cant_pasajeros' => $cant_tikets]);
+                     ;
+                }
+            }
+        }
 
-        
-        $nave = Nave::where('codigo', '=', $request->get('condigo_nave'))->first();
-        $destino = Destino::find(1);
-        $viaje = new Viaje;
-        $viaje->fecha_reserva = $request->get('fecha');
-        $viaje->destino_id = $destino->id;
-        $viaje->nave_id = $nave->id;
-        $viaje->capacidad = $request->get('capacidad');
-        $viaje->save();
-
-
-        return redirect('viajes')->with(['viaje_success' => 'Viajes creada exitosamente']);
+        dd($viaje);
+        return "hola mundo";
     }
 
     /**
@@ -63,7 +61,8 @@ class viajesController extends Controller {
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id) {
+    public function show($id)
+    {
         //
     }
 
@@ -73,7 +72,8 @@ class viajesController extends Controller {
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id) {
+    public function edit($id)
+    {
         //
     }
 
@@ -84,7 +84,8 @@ class viajesController extends Controller {
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id) {
+    public function update(Request $request, $id)
+    {
         //
     }
 
@@ -94,8 +95,8 @@ class viajesController extends Controller {
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id) {
+    public function destroy($id)
+    {
         //
     }
-
 }

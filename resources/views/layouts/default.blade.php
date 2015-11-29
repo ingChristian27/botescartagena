@@ -59,29 +59,24 @@
                     </a>            
                 </li>
                 <li>
-                    <a href="user.html">
+                    <a href="{{route('naves')}}">
                         <i class="pe-7s-user"></i> 
-                        <p>User Profile</p>
+                        <p>Naves</p>
                     </a>
                 </li> 
                 <li>
-                    <a href="table.html">
+                    <a href="{{route('viajes')}}">
                         <i class="pe-7s-note2"></i> 
-                        <p>Table List</p>
+                        <p>Viajes</p>
                     </a>        
                 </li>
                 <li>
-                    <a href="typography.html">
+                    <a href="{{route('reserva')}}">
                         <i class="pe-7s-news-paper"></i> 
-                        <p>Typography</p>
+                        <p>Reservar</p>
                     </a>        
                 </li>
-                <li>
-                    <a href="icons.html">
-                        <i class="pe-7s-science"></i> 
-                        <p>Icons</p>
-                    </a>        
-                </li>
+              
                 <li>
                     <a href="maps.html">
                         <i class="pe-7s-map-marker"></i> 

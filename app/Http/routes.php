@@ -25,9 +25,30 @@ Route::get('/vernaves', 'InicioController@verNaves');
 
 Route::get('/verviajes', 'InicioController@verViajes');
 
-Route::get('/naves', 'navesController@index');
+Route::get('/naves',[
+  'uses' =>  'navesController@index',
+  'as'   => 'naves'
+]);
 
-Route::get('/viajes', 'viajesController@index');
+Route::get('/viajes',[
+  'uses' => 'viajesController@index',
+  'as' =>'viajes'
+]);
+
+Route::get('/reserva',[ 
+  'uses' => 'reservaController@index',
+  'as'  => 'reserva'
+]);
+
+Route::post('/reserva/detalle', [
+  'uses'=>'tiketController@store',
+  'as'=> 'detalle_reserva'
+]);
+
+Route::post('/reserva', [
+    'uses'=>  'reservaController@store',
+    'as' => 'reservar'
+]);
 
 Route::post('/viajes', [
     'uses' => 'viajesController@store',
