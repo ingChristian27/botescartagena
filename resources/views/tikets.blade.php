@@ -38,28 +38,44 @@
             <div class="card">
                 <div style="padding:20px">
                     <div class="row">
-                        <div class="col-lg-6">  
+                    <div class="col-lg-12 col-md-12">
+                    <h3> Pasajero {{$i+1}} </h3><br>
+                        
+                    </div>
+                        <div class="col-lg-4">  
                             <div class="form-group">
-                                <label for="inputPassword"> nombre  </label>
-                                <input type="text" class="form-control" placeholder="{{$i}}_Nombres" name="{{$i}}_nombre">
+                                <label for="inputPassword"> Nombre Completo  </label>
+                                <input type="text" class="form-control" placeholder="Nombre Completo " name="{{$i}}_nombre">
                             </div>
                         </div>
-                        <div class="col-lg-6">
+                        <div class="col-lg-4">
                             <div class="form-group">
-                                <label for="inputPassword">Apellidos</label>
-                                <input type="text" class="form-control" placeholder="{{$i}}_Apellidos" name="{{$i}}_apellido">
+                                <label for="inputPassword">Apellido Completo</label>
+                                <input type="text" class="form-control" placeholder="Apellido Completo" name="{{$i}}_apellido">
                             </div>
                         </div>
-                        <div class="col-lg-6">
+                         <div class="col-lg-4">
+                            <div class="form-group">
+                                <label for="inputPassword">Edad</label>
+                                <input type="number"  class="form-control" min="0" placeholder="Apellido Completo" name="{{$i}}_edad">
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="form-group">
+                                <label for="inputPassword">Identificación</label>
+                                <input type="text" class="form-control" placeholder="Dirección de Correo" name="{{$i}}_identificacion">
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
                             <div class="form-group">
                                 <label for="inputPassword">Email</label>
-                                <input type="mail" class="form-control" placeholder="{{$i}}_Email" name="{{$i}}_email">
+                                <input type="email" class="form-control" placeholder="Dirección de Correo" name="{{$i}}_email">
                             </div>
                         </div>
-                        <div class="col-lg-6">
+                        <div class="col-lg-4">
                             <div class="form-group">
-                                <label for="inputPassword">Tel�fono</label>
-                                <input type="mail" class="form-control" placeholder="{{$i}}_Tel�fono" name="{{$i}}_telefono">
+                                <label for="inputPassword">Teléfono</label>
+                                <input type="text" class="form-control" placeholder="Teléfono" name="{{$i}}_telefono">
                             </div>
                         </div>
                     </div>

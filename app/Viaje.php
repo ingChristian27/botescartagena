@@ -18,6 +18,6 @@ class Viaje extends Model {
     }
 
    public function Tikets() {
-       return $this->hasMany(Tikets::class, 'idviaje');
+       return $this->hasMany(Tikets::class, 'viaje_id');
    }
 }
