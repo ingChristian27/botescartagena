@@ -46,7 +46,10 @@ class reservaController extends Controller {
         dd($viaje);
         return "hola mundo";
     }
+    function ver(){
 
+        dd()
+    }
     /**
      * Display the specified resource.
      *

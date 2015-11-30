@@ -63,13 +63,19 @@
     <div class="item active">
       <img src="/assets/comercial/img/freeze/Slides/descarga.jpg" alt="...">
       <div class="carousel-caption">
-        <h1>Ven y descubre la mejor experiencia</h1>
+        <h1> Disfruta del mar y vive tu propio sueño</h1>
       </div>
     </div>
     <div class="item">
       <img src="/assets/comercial/img/freeze/Slides/descarga1.jpg" alt="...">
       <div class="carousel-caption">
-         <h1>Pronto zarpamos, vive con nosotros está aventura</h1>
+         <h1>Navega con Botes Cartagena una aventura segura y para siempre</h1>
+      </div>
+    </div>
+    <div class="item">
+      <img src="/assets/comercial/img/freeze/Slides/slide_3.jpg" alt="...">
+      <div class="carousel-caption">
+         <h1>Navega con Botes Cartagena una aventura segura y para siempre</h1>
       </div>
     </div>
     
@@ -100,20 +106,19 @@
                   
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-                        <ul class="nav navbar-nav navbar-right">
+                        <ul class="nav navbar-nav navbar-right menu_principal">
                             <li><a href="#about">Quienes somos</a>
                             </li>
-                            <li><a href="#features">VIP</a>
+                           <!-- <li><a href="#features">VIP</a></li>-->
+                            <li><a href="#reviews">Comentarios</a>
                             </li>
-                            <li><a href="#reviews">Charter</a>
-                            </li>
-                            <li><a href="#screens">Vive Cartagena</a>
-                            </li>
+                            <li><a href="#screens">Galería</a></li>
+                            <li><a href="#demo">Video</a> </li>
 
+                            
+                           <!-- <li><a class="getApp" href="#getApp">Mi Reserva</a>-->
                             </li>
-                            <li><a class="getApp" href="#getApp">Mi Reserva</a>
-                            </li>
-                            <li><a href="#support">Contactenos</a>
+                            <li><a href="#support">Contáctenos</a>
                             </li>
                         </ul>
                     </div>
@@ -140,7 +145,7 @@
                     <p>Disfruta de una experiencia de vanguardia e innovación alrededor de una cultura de servicio náutico</p>
                 </div>
 
-                <div class="row">
+               <!--- <div class="row">
                     <div class="col-md-3 col-sm-3 col-xs-6">
                         <div class="about-item scrollpoint sp-effect2">
                          
@@ -165,10 +170,10 @@
                            
                         </div>
                     </div>
-                </div>
+                </div>-->
             </div>
         </section>
-
+<!--
         <section id="features">
             <div class="container">
                 <div class="section-heading scrollpoint sp-effect3">
@@ -277,13 +282,13 @@
                 </div>
             </div>
         </section>
-
+-->
         <section id="reviews">
             <div class="container">
                 <div class="section-heading inverse scrollpoint sp-effect3">
-                    <h1>Reviews</h1>
+                    <h1>Comentarios</h1>
                     <div class="divider"></div>
-                    <p>Read What's The People Are Saying About Us</p>
+                    <p>Estos son los comentarios acerca de nuestro servicio</p>
                 </div>
                 <div class="row">
                     <div class="col-md-10 col-md-push-1 scrollpoint sp-effect3">
@@ -297,9 +302,9 @@
                                     </div>
                                     <div class="col-md-10">
                                         <div class="review-comment">
-                                            <h3>“I love Oleose, I highly recommend it, Everyone Try It Now”</h3>
+                                            <h3>“He tenido un viaje espectacular, ha sido una experiencia unica”</h3>
                                             <p>
-                                                - Krin Fox
+                                                - Julia Martinez
                                                 <span>
                                                     <i class="fa fa-star fa-lg"></i>
                                                     <i class="fa fa-star fa-lg"></i>
@@ -321,9 +326,9 @@
                                     </div>
                                     <div class="col-md-10">
                                         <div class="review-comment">
-                                            <h3>“Oleaose Is The Best Stable, Fast App I Have Ever Experienced”</h3>
+                                            <h3>“Me encanta disfrutar del mar, por fin encontre una empresa que me facilito cumplir mis sueños con confort”</h3>
                                             <p>
-                                                - Theodore Willis
+                                                - Willian Lugo
                                                 <span>
                                                     <i class="fa fa-star fa-lg"></i>
                                                     <i class="fa fa-star fa-lg"></i>
@@ -345,9 +350,9 @@
                                     </div>
                                     <div class="col-md-10">
                                         <div class="review-comment">
-                                            <h3>“Keep It Up Guys Your Work Rules, Cheers :)”</h3>
+                                            <h3>“Tengo ganas de repetir el viaje, espectaular la isla :)”</h3>
                                             <p>
-                                                - Ricky Grant
+                                                - Marco Lopez
                                                 <span>
                                                     <i class="fa fa-star fa-lg"></i>
                                                     <i class="fa fa-star fa-lg"></i>
@@ -370,44 +375,44 @@
             <div class="container">
 
                 <div class="section-heading scrollpoint sp-effect3">
-                    <h1>Screens</h1>
+                    <h1>Imagenes</h1>
                     <div class="divider"></div>
-                    <p>See what’s included in the App</p>
+                    <p>Descubre la cocotera y animate a viajar con nosotros</p>
                 </div>
-
+<!--
                 <div class="filter scrollpoint sp-effect3">
                     <a href="javascript:void(0)" class="button js-filter-all active">All Screens</a>
                     <a href="javascript:void(0)" class="button js-filter-one">User Access</a>
                     <a href="javascript:void(0)" class="button js-filter-two">Social Network</a>
                     <a href="javascript:void(0)" class="button js-filter-three">Media Players</a>
-                </div>
+                </div>-->
                 <div class="slider filtering scrollpoint sp-effect5" >
                     <div class="one">
-                        <img src="/assets/comercial/img/freeze/screens/profile.jpg" alt="">
+                        <img class="img-responsive" width="400px;"src="/assets/comercial/img/freeze/screens/profile.jpg" alt="">
                         <h4>Profile Page</h4>
                     </div>
                     <div class="two">
-                        <img src="/assets/comercial/img/freeze/screens/menu.jpg" alt="">
+                        <img class="img-responsive" width="400px;" src="/assets/comercial/img/freeze/screens/menu.jpg" alt="">
                         <h4>Toggel Menu</h4>
                     </div>
                     <div class="three">
-                        <img src="/assets/comercial/img/freeze/screens/weather.jpg" alt="">
+                        <img class="img-responsive" width="400px;" src="/assets/comercial/img/freeze/screens/weather.jpg" alt="">
                         <h4>Weather Forcast</h4>
                     </div>
                     <div class="one">
-                        <img src="/assets/comercial/img/freeze/screens/signup.jpg" alt="">
+                        <img class="img-responsive" width="400px;" src="/assets/comercial/img/freeze/screens/signup.jpg" alt="">
                         <h4>Sign Up</h4>
                     </div>
                     <div class="one">
-                        <img src="/assets/comercial/img/freeze/screens/calendar.jpg" alt="">
+                        <img class="img-responsive" width="400px;" src="/assets/comercial/img/freeze/screens/calendar.jpg" alt="">
                         <h4>Event Calendar</h4>
                     </div>
                     <div class="two">
-                        <img src="/assets/comercial/img/freeze/screens/options.jpg" alt="">
+                        <img class="img-responsive" width="400px;" src="/assets/comercial/img/freeze/screens/options.jpg" alt="">
                         <h4>Some Options</h4>
                     </div>
                     <div class="three">
-                        <img src="/assets/comercial/img/freeze/screens/sales.jpg" alt="">
+                        <img class="img-responsive" width="400px;" src="/assets/comercial/img/freeze/screens/sales.jpg" alt="">
                         <h4>Sales Analysis</h4>
                     </div>
                 </div>
@@ -417,20 +422,21 @@
         <section id="demo">
             <div class="container">
                 <div class="section-heading scrollpoint sp-effect3">
-                    <h1>Demo</h1>
+                    <h1>Video</h1>
                     <div class="divider"></div>
-                    <p>Take a closer look in more detail</p>
+                    <p>Botes Cartagena, Toda una experiencia</p>
                 </div>
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2 scrollpoint sp-effect2">
                         <div class="video-container" >
-                          <iframe src="http://player.vimeo.com/video/70984663"></iframe> 
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/PEw4hY-EaTE" frameborder="0" allowfullscreen></iframe>
+                          <!--<iframe src="http://player.vimeo.com/video/70984663"></iframe> -->
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-
+<!--
         <section id="getApp">
             <div class="container-fluid">
                 <div class="section-heading inverse scrollpoint sp-effect3">
@@ -465,29 +471,29 @@
 
             </div>
         </section>
-
+-->
         <section id="support" class="doublediagonal">
             <div class="container">
                 <div class="section-heading scrollpoint sp-effect3">
-                    <h1>Support</h1>
+                    <h1>Contactenos</h1>
                     <div class="divider"></div>
-                    <p>For more info and support, contact us!</p>
+                    <p>Contáctenos, no comunicarnos y solucionar todas sus inquietudes</p>
                 </div>
                 <div class="row">
-                   > <div class="col-md-12">
+                    <div class="col-md-12">
                         <div class="row">
                             <div class="col-md-8 col-sm-8 scrollpoint sp-effect1">
                                 <form role="form">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Your name">
+                                        <input type="text" class="form-control" placeholder="Su nombre">
                                     </div>
                                     <div class="form-group">
-                                        <input type="email" class="form-control" >
+                                        <input type="email" class="form-control" placeholder="Email">
                                     </div>
                                     <div class="form-group">
-                                        <textarea cols="30" rows="10" class="form-control" placeholder="Your message"></textarea>
+                                        <textarea cols="30" rows="10" class="form-control" placeholder="Comentario"></textarea>
                                     </div>
-                                    <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                                    <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
                                 </form>
                             </div>
                             <div class="col-md-4 col-sm-4 contact-details scrollpoint sp-effect2">
@@ -496,7 +502,7 @@
                                         <i class="fa fa-map-marker fa-2x"></i>
                                     </a>
                                     <div class="media-body">
-                                        <h4 class="media-heading">4, Some street, California, USA</h4>
+                                        <h4 class="media-heading">Cartagena, Colombia</h4>
                                     </div>
                                 </div>
                                 <div class="media">
@@ -505,7 +511,7 @@
                                     </a>
                                     <div class="media-body">
                                         <h4 class="media-heading">
-                                            <a href="mailto:support@oleose.com">support@oleose.com</a>
+                                            <a href="mailto:support@oleose.com">soporte@botescartagena.com</a>
                                         </h4>
                                     </div>
                                 </div>
@@ -514,7 +520,7 @@
                                         <i class="fa fa-phone fa-2x"></i>
                                     </a>
                                     <div class="media-body">
-                                        <h4 class="media-heading">+1 234 567890</h4>
+                                        <h4 class="media-heading">300 425 7960</h4>
                                     </div>
                                 </div>
                             </div>
@@ -535,8 +541,8 @@
                     <a href="#" class="scrollpoint sp-effect3"><i class="fa fa-facebook fa-lg"></i></a>
                 </div>
                 <div class="rights">
-                    <p>Copyright &copy; 2014</p>
-                    <p>Template by <a href="http://www.scoopthemes.com" target="_blank">ScoopThemes</a></p>
+                    <p>Copyright &copy; 2015</p>
+                    <p>Desarrollado por<a href="http://www.scoopthemes.com" target="_blank"> Christian Dachiardi</a></p>
                 </div>
             </div>
         </footer>
@@ -615,24 +621,24 @@
                     <div class="row"> 
                         <div class="col-lg-6 col-md-6">
                             <div class="form-group">
-                                <label >Cantidad de adultos</label>
-                                <input type="number" class="form-control"  name="cant_adultos"
+                                <label > Adultos</label>
+                                <input  type="number" class="form-control input-sm"  name="cant_adultos"
                                        placeholder="Cantidad de tikets" min="0">
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6">
-                            <div class="form-group">
-                                <label >Cantidad de niños</label>
-                                <input type="number" class="form-control"  name="cant_niños"
+                            <div class="form-group ">
+                                <label > Niños</label>
+                                <input  type="number" class="form-control input-sm"  name="cant_niños"
                                        placeholder="Cantidad de tikets" min="0">
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-lg-12 col-md-12">
-                            <div class="form-group">
+                            <div class="form-group form_dos">
                                 <label for="ejemplo_password_1">Fecha</label>
-                                <input type="date"  class=" form-control"  name="fecha" placeholder="Ingresa la fecha"/>
+                                <input  type="date"  class=" form-control input-sm"  name="fecha" placeholder="Ingresa la fecha"/>
                               
                             </div>
                         </div>

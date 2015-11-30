@@ -26,6 +26,8 @@ Route::get('/verviajes', 'InicioController@verViajes');
 
 Route::get('/', 'comercialController@index');
 
+Route::get('/ver-reservas', 'reservaController@ver');
+
 Route::post('/reservar', [
     'uses' => 'comercialController@store',
     'as' => 'formulario_compra'
@@ -34,12 +36,12 @@ Route::post('/reservar/resumen_reserva', [
     'uses' => 'comercialController@reservar',
     'as' => 'resumen_r'
 ]);
-Route::get('/admin/naves',[
+Route::get('/naves',[
   'uses' =>  'navesController@index',
   'as'   => 'naves'
 ]);
 
-Route::get('/admin/viajes',[
+Route::get('/viajes',[
   'uses' => 'viajesController@index',
   'as' =>'viajes'
 ]);
@@ -59,13 +61,13 @@ Route::post('/admin/reserva', [
     'as' => 'reservar'
 ]);
 
-Route::post('/admin/viajes', [
+Route::post('/viajes', [
     'uses' => 'viajesController@store',
     'as' => 'up_viajes'
 ]);
 
 
-Route::post('/admin/naves', [
+Route::post('/naves', [
     'uses' => 'navesController@store',
     'as' => 'update_naves',
 ]);

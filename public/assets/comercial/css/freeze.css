@@ -1110,17 +1110,18 @@ form .form-control:focus {
 #motor {
     position: fixed;
     color: #fff;
-    border: 1px solid #f2f2f2;
+    border-radius: 20px;
+    /* border: 1px solid #f2f2f2; */
     z-index: 9999;
     background: rgb(1, 113, 159);
     padding: 12px;
     padding-left: 20px;
-    top: 115px;
+    top: 106px;
     right: 80px;
-    width: 315px;
-   -webkit-box-shadow: 2px 3px 23px 0px rgba(0,0,0,0.54);
-  -moz-box-shadow: 2px 3px 23px 0px rgba(0,0,0,0.54);
-  box-shadow: 2px 3px 23px 0px rgba(0,0,0,0.54);
+    width: 235px;
+    -webkit-box-shadow: 2px 3px 23px 0px rgba(0,0,0,0.54);
+    -moz-box-shadow: 2px 3px 23px 0px rgba(0,0,0,0.54);
+    box-shadow: 2px 3px 23px 0px rgba(0,0,0,0.54);
 }
 #motor label{
     color: #FFFFFF;
@@ -1175,4 +1176,35 @@ header{
 }
 .datepicker{
       left: 954px !important;
+}
+.carousel-caption h1 {
+  color:#FFDA1C;
+  font-size: 37px;
+  text-shadow: 5px 5px 5px rgba(34, 138, 8, 0.86);
+
+}
+.menu_principal{
+      background: #01719F;
+    padding: 8px 10px;
+    border-radius: 16px;
+}
+@media screen and (min-width: 768px){
+    .carousel-caption {
+          position: absolute;
+          top: 165px;
+          left: 25%;
+          width: 40%;
+    }
+  
+}
+#motor .form-group {
+  margin-bottom: 5px;
+    margin-top: 15px;
+}
+#motor .form_dos{
+    margin-top: 4px;
+    margin-bottom: 16px;
+}
+header .navbar-default.scrolled ul.navbar-nav li a{
+      color: #FFFFFF;
 }
