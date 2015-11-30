@@ -144,9 +144,9 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                   <!-- <td> {{&cant_pasajeros}} </td>
-                                   
-                                    <td>{{$reserva->costo_total}}</td>-->
+                                 
+                                    <td> {{$cant_pasajeros}} </td>
+                                    <td>{{$reserva->costo_total}}</td>
                                 </tr>
                      
                             </tbody>

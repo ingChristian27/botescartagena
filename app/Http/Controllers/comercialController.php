@@ -56,6 +56,7 @@ class comercialController extends Controller
     }
 
     public function reservar(Request $request){
+
         $cant_tikets = $request->get('cant_tikets');
         $id_viaje = $request->get('viaje_id');
         $viaje = Viaje::find($id_viaje);
@@ -87,9 +88,10 @@ class comercialController extends Controller
                  $tiket->save();
            
         }
-        //$viaje->capacidad -= $cant_tikets;
+       
         $viaje->save();
-        return view('detalle_reserva', ['reserva' => $reserva]);
+         return view('resumen_reserva', ['reserva' => $reserva, 'cant_pasajeros' => $cant_tikets]);
+        
      
     }
 
