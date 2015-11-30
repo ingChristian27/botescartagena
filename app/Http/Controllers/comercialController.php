@@ -10,7 +10,8 @@ use App\Pasajero;
 use App\Viaje;
 use App\Reserva;
 
-class tiketController extends Controller
+
+class comercialController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,7 +20,7 @@ class tiketController extends Controller
      */
     public function index()
     {
-        //
+        return view('index');
     }
 
     /**
@@ -40,6 +41,21 @@ class tiketController extends Controller
      */
     public function store(Request $request)
     {
+        $cant_tikets = $request->get('cant_adultos') + $request->get('cant_niños');
+        $fecha = $request->get('fecha');
+        $viaje = Viaje::where('fecha_reserva', '=', $fecha)->where('capacidad', '>=', $cant_tikets)->first();
+        if ($viaje != null) {
+            if ($viaje->capacidad >= $cant_tikets) {
+                return view('pasajeros', ['viaje' => $viaje, 'cant_pasajeros' => $cant_tikets]);
+            }
+        }
+       
+        return "No hay viajes para esa fecha";
+
+
+    }
+
+    public function reservar(Request $request){
         $cant_tikets = $request->get('cant_tikets');
         $id_viaje = $request->get('viaje_id');
         $viaje = Viaje::find($id_viaje);
@@ -74,6 +90,7 @@ class tiketController extends Controller
         //$viaje->capacidad -= $cant_tikets;
         $viaje->save();
         return view('detalle_reserva', ['reserva' => $reserva]);
+     
     }
 
     /**

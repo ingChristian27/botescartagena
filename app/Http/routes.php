@@ -11,7 +11,6 @@
   |
  */
 
-Route::get('/', 'InicioController@inicio');
 
 Route::get('/naves2', 'InicioController@GuardarUsuario');
 
@@ -25,38 +24,48 @@ Route::get('/vernaves', 'InicioController@verNaves');
 
 Route::get('/verviajes', 'InicioController@verViajes');
 
-Route::get('/naves',[
+Route::get('/', 'comercialController@index');
+
+Route::post('/reservar', [
+    'uses' => 'comercialController@store',
+    'as' => 'formulario_compra'
+]);
+Route::post('/reservar/resumen_reserva', [
+    'uses' => 'comercialController@reservar',
+    'as' => 'resumen_r'
+]);
+Route::get('/admin/naves',[
   'uses' =>  'navesController@index',
   'as'   => 'naves'
 ]);
 
-Route::get('/viajes',[
+Route::get('/admin/viajes',[
   'uses' => 'viajesController@index',
   'as' =>'viajes'
 ]);
 
-Route::get('/reserva',[ 
+Route::get('/admin/reserva',[ 
   'uses' => 'reservaController@index',
   'as'  => 'reserva'
 ]);
 
-Route::post('/detalles', [
+Route::post('/admin/detalles', [
   'uses'=>'tiketController@store',
   'as'=> 'detalle_reserva'
 ]);
 
-Route::post('/reserva', [
+Route::post('/admin/reserva', [
     'uses'=>  'reservaController@store',
     'as' => 'reservar'
 ]);
 
-Route::post('/viajes', [
+Route::post('/admin/viajes', [
     'uses' => 'viajesController@store',
     'as' => 'up_viajes'
 ]);
 
 
-Route::post('/naves', [
+Route::post('/admin/naves', [
     'uses' => 'navesController@store',
     'as' => 'update_naves',
 ]);

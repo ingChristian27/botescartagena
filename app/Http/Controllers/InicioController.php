@@ -13,9 +13,7 @@ class InicioController extends Controller
 { 
 	
 	public function inicio(){
-		$viajes = Viaje:: all();
-		$viajes = Viaje::with('nave', 'destino')->get();
-		return view('viajes', ['viajes'=> $viajes] );
+		
 
 		
 		
