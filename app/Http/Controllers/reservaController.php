@@ -35,6 +35,9 @@ class reservaController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request) {
+
+       
+
         $cant_tikets = $request->get('cant_adultos') + $request->get('cant_niños');
         $fecha = $request->get('fecha');
         $viaje = Viaje::where('fecha_reserva', '=', $fecha)->where('capacidad', '>=', $cant_tikets)->first();
@@ -48,7 +51,7 @@ class reservaController extends Controller {
     }
     function ver(){
 
-        dd()
+        dd();
     }
     /**
      * Display the specified resource.

@@ -1,0 +1,52 @@
+body{
+	background: #F7F6F6;;
+}
+header{
+	    height: 200px !important;
+	    background: url("../img/freeze/bk-freeze-ga.jpg");
+}
+.title{
+	    font-weight: bold;
+    color: #4C80B2;
+}
+.contenido_info{
+	background: #fff;
+	padding: 30px;
+}
+.tabs_reserva{
+	border-style: dashed;
+    border-width: 1px 0px;
+    border-color: rgb(208, 194, 194);
+    padding: 20px;
+}
+.cod_reserva h3{
+	margin-top: -7px;
+}
+.paquete{
+	padding: 20px;
+}
+.opt_paquete{
+	 padding-top: 10px;
+}
+.opt_paquete .input-sm{
+	height: 31px;
+    line-height: 4px;
+    padding: 5px;
+    display: inline;
+    width: 50px;
+}
+.btn_reserva{
+	text-align: center;
+	padding: 20px;
+}
+.btn_reserva button{
+	background: #66cdcc;
+    color: #fff;
+    width: 300px;
+    text-transform: uppercase;
+    height: 50px;
+    border-radius: 50px;
+    text-shadow: none;
+    font-size: 19px;
+    font-weight: bold;
+}

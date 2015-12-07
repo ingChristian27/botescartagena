@@ -9,7 +9,8 @@ use App\Tikets;
 use App\Pasajero;
 use App\Viaje;
 use App\Reserva;
-
+use Carbon\Carbon;
+ 
 
 class comercialController extends Controller
 {
@@ -41,6 +42,9 @@ class comercialController extends Controller
      */
     public function store(Request $request)
     {
+        $date = Carbon::now();
+        $date = $date->format('Y-m-d');
+        
         $cant_tikets = $request->get('cant_adultos') + $request->get('cant_niños');
         $fecha = $request->get('fecha');
         $viaje = Viaje::where('fecha_reserva', '=', $fecha)->where('capacidad', '>=', $cant_tikets)->first();
@@ -49,8 +53,13 @@ class comercialController extends Controller
                 return view('pasajeros', ['viaje' => $viaje, 'cant_pasajeros' => $cant_tikets]);
             }
         }
+        $viajes = Viaje::where('fecha_reserva', '<', $fecha)->where('capacidad', '>=', $cant_tikets)->limit(3)->get();
+
+        
+
+
        
-        return "No hay viajes para esa fecha";
+        return view('otras_busquedas',['viajes' => $viajes]);
 
 
     }

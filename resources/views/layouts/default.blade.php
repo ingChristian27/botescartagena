@@ -77,12 +77,12 @@
                     </a>        
                 </li>
               
-                <li>
+               <!-- <li>
                     <a href="maps.html">
                         <i class="pe-7s-map-marker"></i> 
                         <p>Maps</p>
                     </a>        
-                </li>
+                </li>-->
                 <li>
                     <a href="notifications.html">
                         <i class="pe-7s-bell"></i> 
@@ -103,7 +103,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Dashboard</a>
+                   <!-- <a class="navbar-brand" href="#">Dashboard</a>-->
                 </div>
                 <div class="collapse navbar-collapse">       
                     <ul class="nav navbar-nav navbar-left">
@@ -134,7 +134,7 @@
                     </ul>
                     
                     <ul class="nav navbar-nav navbar-right">
-                        <li>
+                      <!--  <li>
                            <a href="">
                                Account
                             </a>
@@ -153,10 +153,10 @@
                                 <li class="divider"></li>
                                 <li><a href="#">Separated link</a></li>
                               </ul>
-                        </li>
+                        </li>-->
                         <li>
                             <a href="#">
-                                Log out
+                                Cerrar Sección 
                             </a>
                         </li> 
                     </ul>
