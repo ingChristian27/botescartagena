@@ -64,8 +64,11 @@ class viajesController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function show($id) {
-        //
+        $viaje = Viaje::find($id);
+       
+        return view('detalle_viaje', ['viaje' => $viaje]);
     }
+
 
     /**
      * Show the form for editing the specified resource.
@@ -95,7 +98,17 @@ class viajesController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function destroy($id) {
-        //
+        
+        $viaje =Viaje::find($id);
+        
+        if (is_null ($viaje))
+        {
+            App::abort(404);
+        }
+        
+        $viaje->delete();
+
+        return redirect('viajes')->with(['viaje_success' => 'Se ha eliminado el viaje exitosamente']);
     }
 
 }

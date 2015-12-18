@@ -44,3 +44,7 @@
 .places-buttons .btn{
     margin-bottom: 30px
 }
+.modal-backdrop{
+    z-index:0 !important;
+    background-color:  transparent !important;   
+}

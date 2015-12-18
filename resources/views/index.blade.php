@@ -98,7 +98,7 @@
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                             <span class="fa fa-bars fa-lg"></span>
                         </button>
-                        <a class="navbar-brand" href="index.html">
+                        <a class="navbar-brand" href="{{ route('index')}}">
                             <img src="/assets/comercial/img/freeze/logo.png" alt="" class="logo">
                         </a>
                     </div>
@@ -109,6 +109,7 @@
                         <ul class="nav navbar-nav navbar-right menu_principal">
                             <li><a href="#about">Quienes somos</a>
                             </li>
+
                            <!-- <li><a href="#features">VIP</a></li>-->
                             <li><a href="#reviews">Comentarios</a>
                             </li>
@@ -516,7 +517,7 @@
                                     </div>
                                 </div>
                                 <div class="media">
-                                    <a class="pull-left" href="#" >
+                                    <a class="pull-left" href="" >
                                         <i class="fa fa-phone fa-2x"></i>
                                     </a>
                                     <div class="media-body">

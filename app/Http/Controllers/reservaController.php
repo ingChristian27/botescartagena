@@ -7,6 +7,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Viaje;
 use App\Tikets;
+use App\Reserva;
 
 class reservaController extends Controller {
 
@@ -51,7 +52,9 @@ class reservaController extends Controller {
     }
     function ver(){
 
-        dd();
+        $reservas = Reserva::all();
+        return view('ver_reservas', ['reservas' => $reservas]);
+        dd($reservas);
     }
     /**
      * Display the specified resource.

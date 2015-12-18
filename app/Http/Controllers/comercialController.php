@@ -35,13 +35,16 @@ class comercialController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Busca las reservas, si encuentra envia el viaje y la cantdad de usuarios a reservar
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
+
     public function store(Request $request)
     {
+
         $date = Carbon::now();
         $date = $date->format('Y-m-d');
         
@@ -53,17 +56,19 @@ class comercialController extends Controller
                 return view('pasajeros', ['viaje' => $viaje, 'cant_pasajeros' => $cant_tikets]);
             }
         }
+
+        // Busca otros viajes como opciones para listas y los envia
         $viajes = Viaje::where('fecha_reserva', '<', $fecha)->where('capacidad', '>=', $cant_tikets)->limit(3)->get();
-
-        
-
-
-       
-        return view('otras_busquedas',['viajes' => $viajes]);
+        return view('otras_busquedas',['viajes' => $viajes, 'cant_pasajeros' => $cant_tikets]);
 
 
     }
 
+    public function otras_reserva(Request $request){
+
+        return $request->all();
+
+    }
     public function reservar(Request $request){
 
         $cant_tikets = $request->get('cant_tikets');

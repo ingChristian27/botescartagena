@@ -7,6 +7,7 @@ use App\cupo;
 use App\Destino;
 use App\Viaje;
 use App\Tikets;
+use App\Reserva;
 
 
 class InicioController extends Controller
@@ -14,9 +15,8 @@ class InicioController extends Controller
 	
 	public function inicio(){
 		
+  		return view('dashboard');
 
-		
-		
 	}
 	public function GuardarUsuario(){
 	

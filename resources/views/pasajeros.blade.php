@@ -66,7 +66,7 @@
                             </li>
                             <li><a href="#demo">demo</a>
                             </li>
-                            <li><a class="getApp" href="#getApp">Mi reserva</a>
+                            <li><a class="getApp"  href="{{ route('index')}}">Inicio</a>
                             </li>
                             <li><a href="#support">Contactenos</a>
                             </li>

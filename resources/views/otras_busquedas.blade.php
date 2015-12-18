@@ -56,19 +56,11 @@
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="#about">Quienes somos</a>
+                        
+                            <li><a href="{{ route('index')}}">Inicio</a>
                             </li>
-                            <li><a href="#features">VIP</a>
-                            </li>
-                            <li><a href="#reviews">Charter</a>
-                            </li>
-                            <li><a href="#screens">Nuestra ciudad</a>
-                            </li>
-                            <li><a href="#demo">demo</a>
-                            </li>
-                            <li><a class="getApp" href="#getApp">Mi reserva</a>
-                            </li>
-                            <li><a href="#support">Contactenos</a>
+                           
+                            <li><a href="{{ route('index')}}">Contactenos</a>
                             </li>
                         </ul>
                     </div>
@@ -108,11 +100,19 @@
                         <td>{{$viaje->id  }}</td>
                         <td>{{$viaje->fecha_reserva}}</td>
                         <td>{{$viaje->capacidad}}</td>
-                        
-                        <td>    <a href="{{ route('formulario_compra')}}">reservar </a></td>
+                        <td>
+<form role="form" action="{{ route('formulario_compra')}}" method="post">
+                        {{ csrf_field() }}
+                         <input type="hidden" name="fecha" value="{{$viaje->fecha_reserva}}">
+                         <input type="hidden" name="cant_adultos" value="{{$cant_pasajeros}}">
+                         <button type="submit" class="btn btn-default"value="enviar">Reservar</button>
+
+</form>
+                        </td>
+
                      
 
-          <input type="checkbox"> 
+         
         </label>
       </div></td>
                     </tr>
@@ -122,9 +122,7 @@
 
   
  
-            <div class="col-lg-12 btn_reserva">
-                <button> Reservar</button>
-            </div>
+          
         </form>
      </div>    
    

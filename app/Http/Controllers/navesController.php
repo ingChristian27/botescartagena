@@ -62,7 +62,8 @@ class navesController extends Controller
      */
     public function show($id)
     {
-        //
+        $nave = Nave::find($id);
+        return view('detalle_nave', ['nave' => $nave]);
     }
 
     /**

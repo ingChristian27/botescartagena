@@ -10,7 +10,7 @@
             <div style="padding:20px;">
                <div class="row">
                         <div class="col-lg-6">
-                            <h2> Detalles del tour</h2>
+                            <h2> Detalles del tour </h2>
                             <strong>Fecha del tour:    </strong> {{$reserva->tikets[0]->viaje->fecha_reserva}}<br>
                             <strong>Nave:    </strong> {{$reserva->tikets[0]->viaje->nave->codigo}}<br>
                             <strong>Hora de salida:    </strong> 08: 00 AM<br>

@@ -1177,12 +1177,7 @@ header{
 .datepicker{
       left: 954px !important;
 }
-.carousel-caption h1 {
-  color:#FFDA1C;
-  font-size: 37px;
-  text-shadow: 5px 5px 5px rgba(34, 138, 8, 0.86);
 
-}
 .menu_principal{
       background: #01719F;
     padding: 8px 10px;
@@ -1207,4 +1202,9 @@ header{
 }
 header .navbar-default.scrolled ul.navbar-nav li a{
       color: #FFFFFF;
+}
+.carousel-caption h1 {
+    color: rgb(255, 255, 255);
+    font-size: 37px;
+    text-shadow: 5px 5px 5px rgba(88, 88, 88, 0.86);
 }

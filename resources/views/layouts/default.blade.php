@@ -53,7 +53,7 @@
                        
             <ul class="nav">
                 <li class="active">
-                    <a href="dashboard.html">
+                    <a href="{{route('dashboard')}}">
                         <i class="pe-7s-graph"></i> 
                         <p>Dashboard</p>
                     </a>            
@@ -76,6 +76,12 @@
                         <p>Reservar</p>
                     </a>        
                 </li>
+                 <li>
+                    <a href="{{route('ver_reservas')}}">
+                        <i class="pe-7s-news-paper"></i> 
+                        <p>Ver reservas</p>
+                    </a>        
+                </li>
               
                <!-- <li>
                     <a href="maps.html">
@@ -83,12 +89,12 @@
                         <p>Maps</p>
                     </a>        
                 </li>-->
-                <li>
+               <!-- <li>
                     <a href="notifications.html">
                         <i class="pe-7s-bell"></i> 
                         <p>Notifications</p>
                     </a>        
-                </li>
+                </li>-->
             </ul> 
         </div>
     </div>
@@ -185,6 +191,7 @@
                 <p class="copyright pull-right">
                     &copy; 2015 <a href="">Christian dachiardi</a>, Desarrollando sueños
                 </p>
+                
             </div>
         </footer>
         
