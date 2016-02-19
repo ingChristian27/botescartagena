@@ -21,7 +21,7 @@ class viajesController extends Controller {
         $viajes = Viaje:: all();
         $naves = Nave:: all();
         $viajes = Viaje::with('nave', 'destino')->get();
-
+        
         return view('viajes', ['viajes' => $viajes, 'naves' => $naves]);
 
     }

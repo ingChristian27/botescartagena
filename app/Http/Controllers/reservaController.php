@@ -40,8 +40,7 @@ class reservaController extends Controller {
        
 
         $cant_tikets = $request->get('cant_adultos') + $request->get('cant_niños');
-        $fecha = $request->get('fecha');
-        $viaje = Viaje::where('fecha_reserva', '=', $fecha)->where('capacidad', '>=', $cant_tikets)->first();
+        $viaje = Viaje::where('fecha_reserva', '=', $request->get('fecha'))->where('capacidad', '>=', $cant_tikets)->first();
         if ($viaje != null) {
             if ($viaje->capacidad >= $cant_tikets) {
                 return view('tikets', ['viaje' => $viaje, 'cant_pasajeros' => $cant_tikets]);

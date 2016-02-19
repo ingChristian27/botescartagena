@@ -44,21 +44,23 @@ class comercialController extends Controller
 
     public function store(Request $request)
     {
-
-        $date = Carbon::now();
-        $date = $date->format('Y-m-d');
         
         $cant_tikets = $request->get('cant_adultos') + $request->get('cant_niños');
-        $fecha = $request->get('fecha');
-        $viaje = Viaje::where('fecha_reserva', '=', $fecha)->where('capacidad', '>=', $cant_tikets)->first();
-        if ($viaje != null) {
-            if ($viaje->capacidad >= $cant_tikets) {
+        $fecha_viaje = Carbon::parse($request->get('fecha'))->format('Y-m-d');
+        $fecha_actual = Carbon::now()->format('Y-m-d');
+        
+        $fecha_inicial = Carbon::parse($request->get('fecha'))->subDays(5)->format('Y-m-d');
+        $fecha_final = Carbon::parse($request->get('fecha'))->addDays(7)->format('Y-m-d');
+        
+        if($fecha_inicial < $fecha_viaje)   
+            $fecha_inicial = Carbon::now()->addDays(1)->format('Y-m-d');
+        
+        $viaje = Viaje::where('fecha_reserva', '=', $fecha_viaje)->where('fecha_reserva', '>=', $fecha_actual)->where('capacidad', '>=', $cant_tikets)->first();
+        if ($viaje != null) 
                 return view('pasajeros', ['viaje' => $viaje, 'cant_pasajeros' => $cant_tikets]);
-            }
-        }
-
-        // Busca otros viajes como opciones para listas y los envia
-        $viajes = Viaje::where('fecha_reserva', '<', $fecha)->where('capacidad', '>=', $cant_tikets)->limit(3)->get();
+        
+        
+        $viajes = Viaje::where('fecha_reserva', '>', $fecha_inicial)->where('fecha_reserva', '<', $fecha_final)->where('capacidad', '>=', $cant_tikets)->limit(3)->get();
         return view('otras_busquedas',['viajes' => $viajes, 'cant_pasajeros' => $cant_tikets]);
 
 
