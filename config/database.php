@@ -52,12 +52,27 @@ return [
             'prefix'   => '',
         ],
 
+/*
         'mysql' => [
             'driver'    => 'mysql',
             'host'      => env('DB_HOST', 'localhost'),
             'database'  => env('DB_DATABASE', 'botescartagenadb'),
             'username'  => env('DB_USERNAME', 'root'),
             'password'  => env('DB_PASSWORD', ''),
+            'charset'   => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix'    => '',
+            'strict'    => false,
+        ],
+*/  
+
+//Puerto: 3306
+            'mysql' => [
+            'driver'    => 'mysql',
+            'host'      => env('DB_HOST', 'br-cdbr-azure-south-a.cloudapp.net'),
+            'database'  => env('DB_DATABASE', 'testapp6DB'),
+            'username'  => env('DB_USERNAME', 'b96d07c53a756b'),
+            'password'  => env('DB_PASSWORD', '2e10256d'),
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',

@@ -17,7 +17,13 @@ class navesController extends Controller
     public function index()
     {
         $naves = Nave:: all();
-        return view('naves', ['naves'=> $naves] );
+        return Response()->json([
+            "msg" => "Succes",
+            "naves" => $naves->toArray()
+            ], 200
+        );
+        //return ['naves'=> $naves] ;
+        //return view('naves', ['naves'=> $naves] );
     }
 
     /**
