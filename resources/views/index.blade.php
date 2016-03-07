@@ -63,7 +63,7 @@
     <div class="item active">
       <img src="/assets/comercial/img/freeze/Slides/descarga.jpg" alt="...">
       <div class="carousel-caption">
-        <h1> Disfruta del mar y vive tu propio sueño</h1>
+        <h1> Disfruta del mar y vive tu propio sueño :)</h1>
       </div>
     </div>
     <div class="item">
