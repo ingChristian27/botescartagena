@@ -14,11 +14,32 @@ class Nave extends Migration
     {
         Schema::create('nave', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('capacidad');
-            $table->string('codigo')->unique();
+            $table->string('nombre')->unique();
+            $table->string('modelo');
+            $table->string('color');
+
+            $table->integer('tipo');
+            $table->integer('cant_motores');
+            $table->string('potencia');
+            $table->string('marca');
+            $table->string('eslora');
+            $table->string('combustible');
+
+            $table->string('matricula')->unique();
+            $table->integer('pax');
+            $table->integer('chalecos');
+            $table->integer('radio_vhf');
+            $table->integer('nevera');
+
+            $table->string('carpa');
+            $table->string('sonido');
+            $table->string('piloto');
+            $table->string('licencia_piloto');
+            $table->string('copiloto');
+            $table->string('licencia_copiloto');
             $table->string('descripcion', 60);
-            $table->timestamps();
-            
+            $table->timestamps();            
+
         });
     }
 

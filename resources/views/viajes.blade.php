@@ -68,7 +68,7 @@
                                 <label for="ejemplo_email_1">Seleccionar Nave</label>
                                 <select class="form-control" name="condigo_nave">
                                     @foreach($naves as  $nave) 
-                                    <option>{{$nave->codigo }}</option>
+                                    <option>{{$nave->nombre }}</option>
                                     @endforeach
                                 </select>
                             </div>

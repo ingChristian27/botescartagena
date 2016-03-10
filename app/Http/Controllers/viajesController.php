@@ -21,8 +21,31 @@ class viajesController extends Controller {
         $viajes = Viaje:: all();
         $naves = Nave:: all();
         $viajes = Viaje::with('nave', 'destino')->get();
+        $destinos = Destino::all();
+        if(sizeof($destinos) == 0  || sizeof($naves)==0){
+            if(sizeof($destino) == 0){
+                
+                    $destino= new Destino();
+                    $destino->nombre = "La cocotera";
+                    $destino->distancia = "20km";
+                    $destino->descripcion=" Espectacular isla VIP";
+                    $destino->save();   
+                    $destinos = Destino::all();
+            }
+            if(sizeof($naves) == 0){
+                
+                $nave = new Nave();
+                $nave->nombre = "Default";
+                $nave->matricula = "Default";
+                $nave->save();
+                $naves = Nave:: all();
+
+            }
+            
+        }
         
-        return view('viajes', ['viajes' => $viajes, 'naves' => $naves]);
+        
+        return view('viajes', ['viajes' => $viajes, 'naves' => $naves, 'destinos' => $destinos]);
 
     }
 
@@ -43,8 +66,7 @@ class viajesController extends Controller {
      */
     public function store(Request $request) {
 
-        
-        $nave = Nave::where('codigo', '=', $request->get('condigo_nave'))->first();
+        $nave = Nave::where('nombre', '=', $request->get('condigo_nave'))->first();
         $destino = Destino::find(1);
         $viaje = new Viaje;
         $viaje->fecha_reserva = $request->get('fecha');
@@ -53,8 +75,8 @@ class viajesController extends Controller {
         $viaje->capacidad = $request->get('capacidad');
         $viaje->save();
 
-
         return redirect('viajes')->with(['viaje_success' => 'Viajes creada exitosamente']);
+
     }
 
     /**

@@ -17,6 +17,13 @@ class navesController extends Controller
     public function index()
     {
         $naves = Nave:: all();
+        //return ['naves'=> $naves] ;
+        return view('naves', ['naves'=> $naves] );
+    }
+
+  public function indexJson()
+    {
+        $naves = Nave:: all();
         return Response()->json([
             "msg" => "Succes",
             "naves" => $naves->toArray()
@@ -25,7 +32,6 @@ class navesController extends Controller
         //return ['naves'=> $naves] ;
         //return view('naves', ['naves'=> $naves] );
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -45,17 +51,38 @@ class navesController extends Controller
     public function store(Request $request)
     {
        
- 
-        $busqueda = Nave::where('codigo', '=', $request->get('condigo_nave'))->get();
+        //dd($request);
+
+        $busqueda = Nave::where('nombre', '=', $request->get('nombre'))->get();
+        
         if(!$busqueda->isEmpty())
            return "La nave ya existe o tiene el mismo código";
 
         $nave = new Nave();
-        $nave->capacidad = $request->get('capacidad');
-        $nave->codigo = $request->get('condigo_nave');
-        $nave->descripcion = $request->get('descripcion');
+        $nave->nombre =  $request->get('nombre');
+        $nave->modelo =  $request->get('modelo');
+        $nave->color =  $request->get('color');
+        $nave->tipo =  $request->get('tipo');
+        $nave->cant_motores =  $request->get('cant_motores');
+        $nave->potencia =  $request->get('potencia');
+        $nave->marca =  $request->get('marca');
+        $nave->eslora =  $request->get('eslora');
+        $nave->combustible =  $request->get('combustible');
+        $nave->matricula =  $request->get('matricula');
+        $nave->pax =  $request->get('pax');
+        $nave->chalecos =  $request->get('chalecos');
+        $nave->radio_vhf =  $request->get('radio_vhf');
+        $nave->nevera =  $request->get('nevera');
+        $nave->carpa =  $request->get('carpa');
+        $nave->sonido =  $request->get('sonido');
+        $nave->piloto =  $request->get('piloto');
+        $nave->licencia_piloto =  $request->get('licencia_piloto');
+        $nave->copiloto =  $request->get('copiloto');
+        $nave->licencia_copiloto =  $request->get('licencia_copiloto');
+        $nave->descripcion =  $request->get('descripcion');
         $nave->save();   
         return redirect('naves')->with(['nave_success' => 'Nave creada exitosamente' ]);
+
 
       
     }
