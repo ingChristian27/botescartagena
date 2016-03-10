@@ -27,6 +27,8 @@ Route::get('/tiket', 'InicioController@crearTikets');
 Route::get('/vernaves', 'InicioController@verNaves');
 
 Route::get('/verviajes', 'InicioController@verViajes');
+// Json
+Route::get('/navesjson', 'navesController@indexJson');
 
 Route::get('/',[
   'uses' => 'comercialController@index',
@@ -55,6 +57,7 @@ Route::get('/naves',[
   'uses' =>  'navesController@index',
   'as'   => 'naves'
 ]);
+
 
 Route::get('/detalle-viaje/{$id}',[
   'uses' => 'viajesController@show',

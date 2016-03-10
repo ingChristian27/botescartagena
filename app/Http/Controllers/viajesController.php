@@ -23,7 +23,7 @@ class viajesController extends Controller {
         $viajes = Viaje::with('nave', 'destino')->get();
         $destinos = Destino::all();
         if(sizeof($destinos) == 0  || sizeof($naves)==0){
-            if(sizeof($destino) == 0){
+            if(sizeof($destinos) == 0){
                 
                     $destino= new Destino();
                     $destino->nombre = "La cocotera";
