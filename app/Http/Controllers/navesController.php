@@ -51,7 +51,7 @@ class navesController extends Controller
     public function store(Request $request)
     {
        
-        //dd($request);
+        dd($request);
 
         $busqueda = Nave::where('nombre', '=', $request->get('nombre'))->get();
         
