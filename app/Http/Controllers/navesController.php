@@ -84,11 +84,14 @@ class navesController extends Controller
         $nave->licencia_copiloto =  $request->get('licencia_copiloto');
         $nave->descripcion =  $request->get('descripcion');
         $nave->save();   
+
+        $naves = Nave:: all();
+        return Response()->json([
+            "msg" => "Succes",
+            "naves" => $naves->toArray()
+            ], 200
        
-        return redirect('naves')->with(['nave_success' => 'Nave creada exitosamente' ]);
-
-
-      
+        //return redirect('naves')->with(['nave_success' => 'Nave creada exitosamente' ]); 
     }
 
     /**
