@@ -90,7 +90,7 @@ class navesController extends Controller
             "msg" => "Succes",
             "naves" => $naves->toArray()
             ], 200
-       
+       );
         //return redirect('naves')->with(['nave_success' => 'Nave creada exitosamente' ]); 
     }
 
