@@ -51,12 +51,12 @@ class navesController extends Controller
     public function store(Request $request)
     {
        
-        dd($request->get('nombre'));
+       
 
         // Busca el nombre de la nave para verificar su existencia, en caso 
         //de que exista, returna un mensaje de error
         
-        /*$busqueda = Nave::where('nombre', '=', $request->get('nombre'))->get();
+        $busqueda = Nave::where('nombre', '=', $request->get('nombre'))->get();
         
         if(!$busqueda->isEmpty())
            return "La nave ya existe o tiene el mismo código";
@@ -84,10 +84,10 @@ class navesController extends Controller
         $nave->licencia_copiloto =  $request->get('licencia_copiloto');
         $nave->descripcion =  $request->get('descripcion');
         $nave->save();   
-        print $nave;
+       
         return redirect('naves')->with(['nave_success' => 'Nave creada exitosamente' ]);
 
-*/
+
       
     }
 
