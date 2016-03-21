@@ -18,7 +18,7 @@ class Nave extends Migration
             $table->string('modelo');
             $table->string('color');
 
-            $table->integer('tipo');
+            $table->string('tipo');
             $table->integer('cant_motores');
             $table->string('potencia');
             $table->string('marca');
