@@ -69,23 +69,23 @@ class navesController extends Controller
         $nave->modelo =  $request->get('modelo');
         $nave->color =  $request->get('color');
         $nave->tipo =  $request->get('tipo');
-       //$nave->cant_motores =  $request->get('cant_motores');
+        $nave->cant_motores =  $request->get('cant_motores');
         $nave->potencia =  $request->get('potencia');
         $nave->marca =  $request->get('marca');
         $nave->eslora =  $request->get('eslora');
         $nave->combustible =  $request->get('combustible');
         $nave->matricula =  $request->get('matricula');
-        $nave->pax =  $request->get('pax');
-       //$nave->chalecos =  $request->get('chalecos');
-       //$nave->radio_vhf =  $request->get('radio_vhf');
-       //$nave->nevera =  $request->get('nevera');
-       //$nave->carpa =  $request->get('carpa');
-       //$nave->sonido =  $request->get('sonido');
-       //$nave->piloto =  $request->get('piloto');
-       //$nave->licencia_piloto =  $request->get('licencia_piloto');
-       //$nave->copiloto =  $request->get('copiloto');
-       //$nave->licencia_copiloto =  $request->get('licencia_copiloto');
-       //$nave->descripcion =  $request->get('descripcion');
+        $nave->pax =  $request->get('pax'); /*despues de pax*/
+        $nave->chalecos =  $request->get('chalecos');
+        $nave->radio_vhf =  $request->get('radio_vhf');
+        $nave->nevera =  $request->get('nevera');
+        $nave->carpa =  $request->get('carpa');
+        $nave->sonido =  $request->get('sonido');
+        $nave->piloto =  $request->get('piloto');
+        $nave->licencia_piloto =  $request->get('licencia_piloto');
+        $nave->copiloto =  $request->get('copiloto');
+        $nave->licencia_copiloto =  $request->get('licencia_copiloto');
+        $nave->descripcion =  $request->get('descripcion');
         $nave->save();   
 
         $naves = Nave:: all();
