@@ -71,7 +71,7 @@ class navesController extends Controller
        //$nave->marca =  $request->get('marca');
        //$nave->eslora =  $request->get('eslora');
        //$nave->combustible =  $request->get('combustible');
-       //$nave->matricula =  $request->get('matricula');
+       $nave->matricula =  $request->get('matricula');
        //$nave->pax =  $request->get('pax');
        //$nave->chalecos =  $request->get('chalecos');
        //$nave->radio_vhf =  $request->get('radio_vhf');
