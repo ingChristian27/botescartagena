@@ -56,15 +56,18 @@ class navesController extends Controller
         // Busca el nombre de la nave para verificar su existencia, en caso 
         //de que exista, returna un mensaje de error
         
-        $busqueda = Nave::where('nombre', '=', $request->get('nombre'))->get();
+        $busqueda_nombre = Nave::where('nombre', '=', $request->get('nombre'))->get();
+        $busqueda_matricula = Nave::where('matricula', '=', $request->get('matricula'))->get();
+
         
-        if(!$busqueda->isEmpty())
-           return "La nave ya existe o tiene el mismo código";
+        if(!$busqueda_nombre->isEmpty() || !$busqueda_matricula->isEmpty()){
+           return "Código o Nombre repetido";
+        }
 
         $nave = new Nave();
         $nave->nombre =  $request->get('nombre');
-       //$nave->modelo =  $request->get('modelo');
-       //$nave->color =  $request->get('color');
+        $nave->modelo =  $request->get('modelo');
+        $nave->color =  $request->get('color');
        //$nave->tipo =  $request->get('tipo');
        //$nave->cant_motores =  $request->get('cant_motores');
        //$nave->potencia =  $request->get('potencia');
