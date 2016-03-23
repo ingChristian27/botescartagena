@@ -29,8 +29,6 @@ class navesController extends Controller
             "naves" => $naves->toArray()
             ], 200
         );
-        //return ['naves'=> $naves] ;
-        //return view('naves', ['naves'=> $naves] );
     }
     /**
      * Show the form for creating a new resource.
@@ -50,7 +48,6 @@ class navesController extends Controller
      */
     public function store(Request $request)
     {
-       
        
 
         // Busca el nombre de la nave para verificar su existencia, en caso 
@@ -75,7 +72,7 @@ class navesController extends Controller
         $nave->eslora =  $request->get('eslora');
         $nave->combustible =  $request->get('combustible');
         $nave->matricula =  $request->get('matricula');
-        $nave->pax =  $request->get('pax'); /*despues de pax*/
+        $nave->pax =  $request->get('pax'); 
         $nave->chalecos =  $request->get('chalecos');
         $nave->radio_vhf =  $request->get('radio_vhf');
         $nave->nevera =  $request->get('nevera');
@@ -94,7 +91,7 @@ class navesController extends Controller
             "naves" => $naves->toArray()
             ], 200
        );
-        //return redirect('naves')->with(['nave_success' => 'Nave creada exitosamente' ]); 
+       
     }
 
     /**

@@ -68,6 +68,10 @@ Route::get('/viajes',[
   'uses' => 'viajesController@index',
   'as' =>'viajes'
 ]);
+Route::get('/index-json',[
+  'uses' => 'viajesController@indexJson',
+  'as' =>'viajesjson'
+]);
 
 Route::get('/admin/reserva',[ 
   'uses' => 'reservaController@index',

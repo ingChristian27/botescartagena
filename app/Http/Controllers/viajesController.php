@@ -44,9 +44,45 @@ class viajesController extends Controller {
             
         }
         
-        
         return view('viajes', ['viajes' => $viajes, 'naves' => $naves, 'destinos' => $destinos]);
 
+    }
+    public function indexJson() {
+
+        $viajes = Viaje:: all();
+        $naves = Nave:: all();
+        $viajes = Viaje::with('nave', 'destino')->get();
+        $destinos = Destino::all();
+        // Valida si existen destinos y naves, en caso de no haber crea uno por default
+        if(sizeof($destinos) == 0  || sizeof($naves)==0){
+            if(sizeof($destinos) == 0){
+                
+                    $destino= new Destino();
+                    $destino->nombre = "La cocotera";
+                    $destino->distancia = "20km";
+                    $destino->descripcion=" Espectacular isla VIP";
+                    $destino->save();   
+                    $destinos = Destino::all();
+            }
+            if(sizeof($naves) == 0){
+                
+                $nave = new Nave();
+                $nave->nombre = "Default";
+                $nave->matricula = "Default";
+                $nave->save();
+                $naves = Nave:: all();
+
+            }
+            
+        }
+        // Retorna json con naves, viajes y destino
+        return Response()->json([
+            "msg" => "Succes",
+            "viajes" => $viajes->toArray(),
+            "naves" => $naves->toArray(),
+            "destinos" => $destinos->toArray()
+            ], 200
+        );
     }
 
     /**
