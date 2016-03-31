@@ -110,8 +110,21 @@ class viajesController extends Controller {
         $viaje->nave_id = $nave->id;
         $viaje->capacidad = $request->get('capacidad');
         $viaje->save();
+        $naves = Nave:: all();
+        $destinos = Destino::all();
+        $viajes = Viaje::with('nave', 'destino')->get();
 
-        return redirect('viajes')->with(['viaje_success' => 'Viajes creada exitosamente']);
+        // Retorna json con naves, viajes y destino
+        return Response()->json([
+            "msg" => "Succes",
+            "viajes" => $viajes->toArray(),
+            "naves" => $naves->toArray(),
+            "destinos" => $destinos->toArray()
+            ], 200
+        );
+
+
+        //return redirect('viajes')->with(['viaje_success' => 'Viajes creada exitosamente']);
 
     }
 
