@@ -102,7 +102,8 @@ class viajesController extends Controller {
      */
     public function store(Request $request) {
 
-        $nave = Nave::where('nombre', '=', $request->get('condigo_nave'))->first();
+        //$nave = Nave::where('nombre', '=', $request->get('condigo_nave'))->first();
+        $nave =Nave::find(get('condigo_nave'))
         $destino = Destino::find(1);
         $viaje = new Viaje;
         $viaje->fecha_reserva = $request->get('fecha');
