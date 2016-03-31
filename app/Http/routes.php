@@ -17,7 +17,7 @@ Route::get('/dashboard',[
   ] );
 Route::get('/naves2', 'InicioController@GuardarUsuario');
 
-Route::get('/destino', 'InicioController@destinos');
+//Route::get('/destino', 'InicioController@destinos');
 
 Route::get('/viaje', 'InicioController@crearviaje');
 
@@ -28,8 +28,41 @@ Route::get('/vernaves', 'InicioController@verNaves');
 
 Route::get('/verviajes', 'InicioController@verViajes');
 // Json
+
+// ********************   naves  ******************** 
 Route::get('/navesjson', 'navesController@indexJson');
 
+Route::get('/naves',[
+  'uses' =>  'navesController@index',
+  'as'   => 'naves'
+]);
+
+Route::post('/naves', [
+    'uses' => 'navesController@store',
+    'as' => 'update_naves',
+]);
+
+Route::get('/ver-nave/{nombre}',[
+  'uses' => 'navesController@show',
+  'as' => 'ver_nave'
+]);
+
+
+// **************** Destinos ********************* 
+
+Route::get('/destinos', 'destinosController@index');
+
+
+Route::post('/destinos', [
+    'uses' => 'destinosController@store',
+    'as' => 'update_destinos',
+]);
+
+Route::get('/ver-destino/{nombre}',[
+  'uses' => 'destinosController@show',
+  'as' => 'ver_destino'
+]);
+// ************************************************
 Route::get('/',[
   'uses' => 'comercialController@index',
   'as' => 'index'
@@ -52,10 +85,6 @@ Route::post('/reservar', [
 Route::post('/reservar/resumen_reserva', [
     'uses' => 'comercialController@reservar',
     'as' => 'resumen_r'
-]);
-Route::get('/naves',[
-  'uses' =>  'navesController@index',
-  'as'   => 'naves'
 ]);
 
 
@@ -94,15 +123,7 @@ Route::post('/viajes', [
 ]);
 
 
-Route::post('/naves', [
-    'uses' => 'navesController@store',
-    'as' => 'update_naves',
-]);
 
-Route::get('/ver-nave/{nombre}',[
-  'uses' => 'navesController@show',
-  'as' => 'ver_nave'
-]);
 Route::get('/ver-viaje/{nombre}',[
   'uses' => 'viajesController@show',
   'as' => 'ver_viaje'
