@@ -104,7 +104,7 @@ class viajesController extends Controller {
 
         //$nave = Nave::where('nombre', '=', $request->get('condigo_nave'))->first();
         $nave =Nave::find($request->get('condigo_nave'));
-        $destino = Destino::find(1);
+        $destino = Destino::find($request->get('codigo_destino'));
         $viaje = new Viaje;
         $viaje->fecha_reserva = $request->get('fecha');
         $viaje->destino_id = $destino->id;
