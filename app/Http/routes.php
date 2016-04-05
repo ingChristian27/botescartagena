@@ -63,6 +63,13 @@ Route::get('/ver-destino/{nombre}',[
   'as' => 'ver_destino'
 ]);
 // ************************************************
+
+//*************** Comerciales *********************
+Route::post('/buscar-viaje', [
+    'uses' => 'comercialController@BuscarViaje',
+    'as' => 'busqueda_viajes'
+]);
+//*************************************************
 Route::get('/',[
   'uses' => 'comercialController@index',
   'as' => 'index'
@@ -82,10 +89,7 @@ Route::post('/reservar', [
     'uses' => 'comercialController@store',
     'as' => 'formulario_compra'
 ]);
-// Comercial
-Route::get('/buscar-viaje', 'comercialController@BuscarViaje');
-
-Route::post('/reservar/resumen_reserva', [s
+Route::post('/reservar/resumen_reserva', [
     'uses' => 'comercialController@reservar',
     'as' => 'resumen_r'
 ]);
