@@ -16,6 +16,8 @@ class viajesController extends Controller {
      *
      * @return \Illuminate\Http\Response
      */
+
+    // Esta funcion actualmente no se està usando
     public function index() {
 
         $viajes = Viaje:: all();
