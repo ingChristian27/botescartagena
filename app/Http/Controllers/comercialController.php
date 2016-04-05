@@ -110,6 +110,47 @@ class comercialController extends Controller
         
      
     }
+        public function BuscarViaje(Request $request){
+        /*
+        * 1.  suma la cantidad de tikets entre niños y adultos
+        * 2.  Modifica el formato de la fecha del viaje
+        * 3.  Trae la fecha actual
+        * 4.  guarda en una variable el rango de busqueda, el cual es de -5 + 7 dias
+        */
+
+        $cant_tikets = $request->get('cant_adultos') + $request->get('cant_niños');
+        $fecha_viaje = Carbon::parse($request->get('fecha'))->format('Y-m-d');
+        $fecha_actual = Carbon::now()->format('Y-m-d');
+        
+        $fecha_inicial = Carbon::parse($request->get('fecha'))->subDays(5)->format('Y-m-d');
+        $fecha_final = Carbon::parse($request->get('fecha'))->addDays(7)->format('Y-m-d');
+        // Si la fecha es inicial es menor a la fecha del viaje a la fecha del viaje se le agrega un dia
+        if($fecha_inicial < $fecha_viaje)   
+            $fecha_inicial = Carbon::now()->addDays(1)->format('Y-m-d');
+        // fecha de reserva debe ser igual a la del viaje y la fecha de reserva mayor a la actual
+        
+        $viaje = Viaje::where('fecha_reserva', '=', $fecha_viaje)->where('fecha_reserva', '>=', $fecha_actual)->where('capacidad', '>=', $cant_tikets)->first();
+        // si se encuentran viajes los retorna con la cantidad de pasajeros
+        if ($viaje != null) 
+            return Response()->json([
+                        "msg" => "Succes",
+                        "viaje" => $viaje->toArray(),
+                        "cant_pasajeros" => $cant_tikets
+                        ], 200
+            );
+                
+        
+        
+        $viajes = Viaje::where('fecha_reserva', '>', $fecha_inicial)->where('fecha_reserva', '<', $fecha_final)->where('capacidad', '>=', $cant_tikets)->limit(3)->get();
+        return Response()->json([
+                        "msg" => "Succes",
+                        "viajes" => $viajes->toArray(),
+                        "cant_pasajeros" => $cant_tikets
+                        ], 200
+        );
+        
+    }
+
 
     /**
      * Display the specified resource.

@@ -82,7 +82,10 @@ Route::post('/reservar', [
     'uses' => 'comercialController@store',
     'as' => 'formulario_compra'
 ]);
-Route::post('/reservar/resumen_reserva', [
+// Comercial
+Route::get('/buscar-viaje', 'comercialController@BuscarViaje');
+
+Route::post('/reservar/resumen_reserva', [s
     'uses' => 'comercialController@reservar',
     'as' => 'resumen_r'
 ]);
