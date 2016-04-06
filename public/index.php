@@ -6,6 +6,8 @@
  * @package  Laravel
  * @author   Taylor Otwell <taylorotwell@gmail.com>
  */
+header ( "Access-Control-Allow-Origin: *");
+header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
 
 /*
 |--------------------------------------------------------------------------

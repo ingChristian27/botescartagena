@@ -10,6 +10,9 @@
   | and give it the controller to call when that URI is requested.
   |
  */
+header('Access-Control-Allow-Origin: http://localhost:9000');
+header('Access-Control-Allow-Credentials: true');
+
 
 Route::get('/dashboard',[
     'uses' => 'InicioController@inicio',
