@@ -48,6 +48,7 @@ class destinosController extends Controller
         $destino->nombre =  $request->get('nombre');
         $destino->distancia =  $request->get('distancia');
         $destino->descripcion =  $request->get('descripcion');
+        $destino->precio = $request->get('valor');
         $destino->save();   
 
         $destinos = Destino:: all();

@@ -39,6 +39,7 @@ Route::get('/naves',[
   'uses' =>  'navesController@index',
   'as'   => 'naves'
 ]);
+Route::get('/eliminar-naves/{id}', 'navesController@destroy');
 
 Route::post('/naves', [
     'uses' => 'navesController@store',

@@ -137,6 +137,19 @@ class navesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $nave =Nave::find($id);
+        
+        if (is_null ($nave))
+        {
+            App::abort(404);
+        }
+        
+        $nave->delete();
+        return Response()->json([
+            "msg" => "Se ha eliminado el nave exitosamente"
+            ], 200
+       );
+
+       
     }
 }

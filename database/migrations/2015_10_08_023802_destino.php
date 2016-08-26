@@ -17,6 +17,7 @@ class Destino extends Migration
             $table->string('nombre');
             $table->string('distancia');
             $table->text('descripcion');
+            $table->decimal('precio', 5, 2);
             $table->timestamps();
             
             

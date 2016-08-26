@@ -60,7 +60,7 @@ class comercialController extends Controller
                 return view('pasajeros', ['viaje' => $viaje, 'cant_pasajeros' => $cant_tikets]);
         
         
-        $viajes = Viaje::where('fecha_reserva', '>', $fecha_inicial)->where('fecha_reserva', '<', $fecha_final)->where('capacidad', '>=', $cant_tikets)->limit(3)->get();
+        $viajes = Viaje::where('fecha_reserva', '>', $fecha_inicial)->where('fecha_reserva', '<', $fecha_final)->where('capacidad', '>=', $cant_tikets)->get();
         return view('otras_busquedas',['viajes' => $viajes, 'cant_pasajeros' => $cant_tikets]);
 
 
@@ -129,19 +129,9 @@ class comercialController extends Controller
             $fecha_inicial = Carbon::now()->addDays(1)->format('Y-m-d');
         // fecha de reserva debe ser igual a la del viaje y la fecha de reserva mayor a la actual
         
-        $viaje = Viaje::where('fecha_reserva', '=', $fecha_viaje)->where('fecha_reserva', '>=', $fecha_actual)->where('capacidad', '>=', $cant_tikets)->first();
-        // si se encuentran viajes los retorna con la cantidad de pasajeros
-        if ($viaje != null) 
-            return Response()->json([
-                        "msg" => "Succes",
-                        "viaje" => $viaje->toArray(),
-                        "cant_pasajeros" => $cant_tikets
-                        ], 200
-            );
-                
+ 
+        $viajes = Viaje::where('fecha_reserva', '>', $fecha_inicial)->where('fecha_reserva', '<', $fecha_final)->where('capacidad', '>=', $cant_tikets)->with( 'destino')->get();
         
-        
-        $viajes = Viaje::where('fecha_reserva', '>', $fecha_inicial)->where('fecha_reserva', '<', $fecha_final)->where('capacidad', '>=', $cant_tikets)->limit(3)->get();
         return Response()->json([
                         "msg" => "Succes",
                         "viajes" => $viajes->toArray(),

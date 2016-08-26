@@ -17,6 +17,7 @@ class Pasajero extends Migration
             $table->string('nombres');
             $table->string('apellidos');
             $table->string('identificacion');
+            $table->string('hospedaje');
             $table->string('telefono');
             $table->date('fecha_nacimiento');
             $table->string('email');
